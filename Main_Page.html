@@ -4,29 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ball Of Fame</title>
-    <link rel="stylesheet" href="/css/layout.css" />
-    <link
-      rel="shortcut icon"
-      href="/images/favicon.ico"
-      type="image/x-icon"
-    />
-    <script src="/js/data.js"></script>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/modal.css"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <script src="/js/data.js" defer></script>
   </head>
 
-  <!-- tässä on Logo ja search --->
   <body class="body">
+
+    <!-- Title and logo -->
     <div class="header">
       <h1 class="title">BALL OF FAME</h1>
       <img class="logo" src="">
     </div>
 
+    <!-- Search bar and result box -->
     <div class="search-bar">
-      <input class="search-input" type="text" placeholder="search..." />
-      <div class="search-results">turn this to a box, where 3 answers appear</div>
+      <input class="search-input" id="search" type="text" placeholder="Search team or player">
+      <div class="search-results" id="result"></div> <!--style so it fits 3 results and is always the same size-->
     </div>
 
-    <!--- tähän tulee joukkue, joukkuen nimet ja paras pelaja osio MALLI --->
+    <!--- Team and top player, and the template --->
     <div class="team-section">
+
+      <!--TEMPLATE starts-->
       <div class="team-section-side team-logo">
         <img src="/images/placeholder.png" alt="">
       </div>
@@ -43,27 +44,73 @@
       <div class="team-section-side top-player">
         <img src="/images/placeholder.png" alt="">
       </div>
+      <!--TEMPLATE ENDS-->
     </div>
 
+    <!-- Add team button, brings a new div into view, which has a form in it,
+      disappears when form is up, reappears when form is submitted -->
     <button class="team add" id="addTeam">Add team</button>
 
-    <!--joukkueen luonti lomakkee-->
+    <!-- Form for adding teams -->
     <div class="team-form-section hidden">
-      <h2 class="team-form-title">Luo tiimi</h2>
+      <h2 class="team-form-title">Add team form</h2>
       <form class="team-form">
-        <label class="team-label">Tiimin nimi: </label>
-        <input class="team-input" type="text">
-
-        <div class="pelaaja-divs">
-          <div class="pelaaja1">Pelaaja.1</div>
-          <div class="pelaaja2">Pelaaja.2</div>
-          <div class="pelaaja3">Pelaaja.3</div>
-          <div class="pelaaja4">Pelaaja.4</div>
-          <div class="pelaaja5">Pelaaja.5</div>
+        <div>
+          <img src="" alt="">
+          <div>
+            <div>
+              <label class="team-label">Name of team: </label>
+              <input class="team-input-name" type="text">
+            </div>
+            <div>
+              <label class="team-label">Description of team: </label>
+              <input class="team-input-description" type="text">
+            </div>
+          </div>
         </div>
 
-        <button class="team submit" type="sybmit">Submit</button>
+        <div class="highlights">
+          <button class="hightlight" value="">Show highlight</button>
+          <button class="hightlight" value="">Show highlight</button>
+          <button class="hightlight" value="">Show highlight</button>
+        </div>
 
+        <!-- Player adding section -->
+        <div class="player-divs">
+          <div class="player">
+            <div>
+              <img src="" alt="">
+            </div>
+            <div class="player-input-box">
+              <div class="player-input-row">
+                <div class="player-input-wrap">
+                  <label class="player-label">Name of player</label>
+                  <input class="player-input" type="text">
+                </div>
+                <div class="player-input-wrap">
+                  <label class="player-label">Height of player</label>
+                  <input class="player-input" type="text">
+                </div>
+              </div>
+
+              <div class="player-input-row">
+                <div class="player-input-wrap">
+                  <label class="player-label">Points Per Game of player</label>
+                  <input class="player-input" type="text">
+                </div>
+                <div class="player-input-wrap">
+                  <label class="player-label">Freethrow percentage of player</label>
+                  <input class="player-input" type="text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- submits form, checks if everything is filled in correctly,
+          then saves info into localStorage, hides itself and shows the add team button -->
+        <button class="team submit" type="submit">Submit</button>
       </form>
     </div>
     
@@ -77,7 +124,7 @@
             src="">
         </iframe>
       </div>
-    </div>s
+    </div>
 
     <!--footer-->
     <footer class="footer">
