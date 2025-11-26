@@ -4,72 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ball Of Fame</title>
-    <link rel="stylesheet" href="/ball-of-fame/css/layout.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
     <link
       rel="shortcut icon"
-      href="/ball-of-fame/images/favicon.ico"
+      href="/images/favicon.ico"
       type="image/x-icon"
     />
-    <script src="/ball-of-fame/js/data.js"></script>
+    <script src="/js/data.js"></script>
   </head>
 
   <!-- tässä on Logo ja search --->
-    <body class="body">
+  <body class="body">
     <div class="header">
-      <h1 class="Logo">Ball-of-Fame</h1>
-      <div class="search-bar"></div>
+      <h1 class="title">BALL OF FAME</h1>
+      <img class="logo" src="">
+    </div>
+
+    <div class="search-bar">
       <input class="search-input" type="text" placeholder="search..." />
-      <button class="search-button">Search</button>
+      <div class="search-results">turn this to a box, where 3 answers appear</div>
     </div>
-    <div class="search-results">
-      <p class="search-text">Vastaukset näkyy tässä</p>
+
+    <!--- tähän tulee joukkue, joukkuen nimet ja paras pelaja osio MALLI --->
+    <div class="team-section">
+      <div class="team-section-side team-logo">
+        <img src="/images/placeholder.png" alt="">
+      </div>
+
+      <div class="team-section-middle">
+        <div class="team-section-middle top">
+          <h2>TEAM TITLE</h2>
+        </div>
+        <div class="team-section-middle bottom">
+          <h2>TOP PLAYER</h2>
+        </div>
+      </div>
+
+      <div class="team-section-side top-player">
+        <img src="/images/placeholder.png" alt="">
+      </div>
     </div>
-  </div>
 
-
-
-  <!--- tähän tulee joukkue, joukkuen nimet ja paras pelaja osio   --->
-  <div class="team-section"></div>
-  <h2 class="team-form-title">Tiimin tiedot</h2>
-  <p class="team-name">Tiimin nimi: blah blah</p>
-  <p class="top-pelaja">Paras Pelaaja: bruh"></p>
-</div >
+    <button class="team add" id="addTeam">Add team</button>
 
     <!--joukkueen luonti lomakkee-->
-    <div class="team-form-section">
+    <div class="team-form-section hidden">
       <h2 class="team-form-title">Luo tiimi</h2>
-      <form class="team-form"></form>
-      <label class="team-label">Tiimin nimi: </label>
-      <input class="team-input" type="text">
+      <form class="team-form">
+        <label class="team-label">Tiimin nimi: </label>
+        <input class="team-input" type="text">
 
-    <div class="pelaaja-divs">
-      <div class="pelaaja1">Pelaaja.1</div>
-      <div class="pelaaja2">Pelaaja.2</div>
-      <div class="pelaaja3">Pelaaja.3</div>
-      <div class="pelaaja4">Pelaaja.4</div>
-      <div class="pelaaja5">Pelaaja.5</div>
+        <div class="pelaaja-divs">
+          <div class="pelaaja1">Pelaaja.1</div>
+          <div class="pelaaja2">Pelaaja.2</div>
+          <div class="pelaaja3">Pelaaja.3</div>
+          <div class="pelaaja4">Pelaaja.4</div>
+          <div class="pelaaja5">Pelaaja.5</div>
+        </div>
+
+        <button class="team submit" type="sybmit">Submit</button>
+
+      </form>
     </div>
-    <button class="team submit" type="sybmit">Luo tiimi</button>
-  </form>
-</div>
- <!--tässä on joukkue sivun pohja-->
- <div class="team-page">
-  <h2 class="team-page-title">Tiimisivun mallipohja</h2>
-  <p class="team-page-name">blah blah tiimin nimi</p>
-  <p class="team-page-details">tiimin tiedot luodaan tänne</p>
- </div>
- <!--Modal laatikko-->
- <div class="modal" id="myModal">
-  <div class="modal-content">
-    <span class="close">X</span>
-    <p class="modal-text">vähän teksi modelissa bla bla bla...</p>
-  </div>
- </div>
+    
 
- <!--footeri-->
- <footer class="footer">
-  <p class="copyright">© Ball Of Fame - Nicolas, Radin, Mujib</p>
- </footer>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe id="video" width="840" height="630"
+            src="">
+        </iframe>
+      </div>
+    </div>s
+
+    <!--footer-->
+    <footer class="footer">
+      <p class="copyright">© Ball Of Fame - Nicolas, Radin, Mujib</p>
+    </footer>
 
   </body>
 </html>
