@@ -10,9 +10,9 @@ const teams = {
             "players":[
                 {"player_image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png", "player_name":"LeBron James","height":206,"best_ppg":27.1,"freethrow_percentage":"73.6%"},
                 {"player_image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/110.png", "player_name":"Kobe Bryant","height":198,"best_ppg":25,"freethrow_percentage":"83.7%"},
-                {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/77142.png", "player_name":"Magic Johnson","height":206,"best_ppg":19.5,"freethrow_percentage":"84.8%"},
                 {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/76003.png", "player_name":"Kareem Abdul-Jabbar","height":218,"best_ppg":24.6,"freethrow_percentage":"72.1%"},
-                {"player_image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/614.png", "player_name":"Shaquille O'Neal","height":216,"best_ppg":23.7,"freethrow_percentage":"52.7%"}
+                {"player_image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/614.png", "player_name":"Shaquille O'Neal","height":216,"best_ppg":23.7,"freethrow_percentage":"52.7%"},
+                {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/77142.png", "player_name":"Magic Johnson","height":206,"best_ppg":19.5,"freethrow_percentage":"84.8%"}
             ]
         },
         {"ID":2,"team_image":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gs.png",
@@ -23,8 +23,8 @@ const teams = {
             "highlight_2": "https://www.youtube.com/embed/O8QuVSRbybY?si=FPxE8e0ignK9h6Eo",
             "highlight_3": "https://www.youtube.com/embed/BucRbeyYSHw?si=2fYHh-1mi5VcrbMG",
             "players":[
-                {"player_image": "https://a.espncdn.com/i/headshots/nba/players/full/4432171.png", "player_name":"Stephen Curry","height":188,"best_ppg":24.7,"freethrow_percentage":"90.9%"},
                 {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/76375.png", "player_name":"Wilt Chamberlain","height":216,"best_ppg":30.1,"freethrow_percentage":"51.1%"},
+                {"player_image": "https://a.espncdn.com/i/headshots/nba/players/full/4432171.png", "player_name":"Stephen Curry","height":188,"best_ppg":24.7,"freethrow_percentage":"90.9%"},
                 {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/600013.png", "player_name":"Rick Barry","height":198,"best_ppg":23.2,"freethrow_percentage":"89.3%"},
                 {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/76056.png", "player_name":"Paul Arizin","height":193,"best_ppg":22.8,"freethrow_percentage":"80.2%"},
                 {"player_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH-qW3ZLiuKuObdIF1rn6xodNTzYAWKXpvpw&s", "player_name":"Chris Mullin","height":200,"best_ppg":18.2,"freethrow_percentage":"86.5%"}
@@ -39,10 +39,10 @@ const teams = {
             "highlight_3": "https://www.youtube.com/embed/VqlgO5_JWOA?si=ZDD4EcYFmm1LOTlE",
             "players":[
                 {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/893.png", "player_name":"Michael Jordan","height":198,"best_ppg":30.1,"freethrow_percentage":"83.5%"},
-                {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/937.png", "player_name":"Scottie Pippen","height":203,"best_ppg":16.1,"freethrow_percentage":"70.4%"},
                 {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/201565.png", "player_name":"Derrick Rose","height":191,"best_ppg":18.2,"freethrow_percentage":"83.0%"},
-                {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/23.png", "player_name":"Dennis Rodman","height":201,"best_ppg":7.3,"freethrow_percentage":"58.4%"},
-                {"player_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScGYdMy46nxLshuqHa8E-NxBZ0AwrTfEN98g&s", "player_name":"Horace Grant","height":206,"best_ppg":13.2,"freethrow_percentage":"70.8%"}
+                {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/937.png", "player_name":"Scottie Pippen","height":203,"best_ppg":16.1,"freethrow_percentage":"70.4%"},
+                {"player_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScGYdMy46nxLshuqHa8E-NxBZ0AwrTfEN98g&s", "player_name":"Horace Grant","height":206,"best_ppg":13.2,"freethrow_percentage":"70.8%"},
+                {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/23.png", "player_name":"Dennis Rodman","height":201,"best_ppg":7.3,"freethrow_percentage":"58.4%"}
             ]
         },
         {"ID":4,"team_image":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/2.png",
@@ -54,9 +54,9 @@ const teams = {
             "highlight_3": "https://www.youtube.com/embed/IgGS629f5mU?si=XEH6xwH225ZI6ZrK",
             "players":[
                 {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1449.png", "player_name":"Larry Bird","height":206,"best_ppg":24.3,"freethrow_percentage":"88.6%"},
-                {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/78049.png", "player_name":"Bill Russell","height":208,"best_ppg":15.1,"freethrow_percentage":"56.1%"},
                 {"player_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY4YQ6Yd66Qk3VYGJN5rG5JIdXPrbK-j17NQ&s", "player_name":"Paul Pierce","height":201,"best_ppg":19.7,"freethrow_percentage":"80.6%"},
                 {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1450.png", "player_name":"Kevin McHale","height":208,"best_ppg":17.9,"freethrow_percentage":"76.2%"},
+                {"player_image": "https://cdn.nba.com/headshots/nba/latest/1040x760/78049.png", "player_name":"Bill Russell","height":208,"best_ppg":15.1,"freethrow_percentage":"56.1%"},
                 {"player_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRU50yWLmt0Xf64eSq2NXfSMvf_1TQ-ab6Tg&s", "player_name":"Robert Parish","height":216,"best_ppg":14.5,"freethrow_percentage":"72.1%"}
             ]
         }
@@ -103,3 +103,59 @@ function search(searchList, searchTerm) {
         results.sort()
     }
 }
+
+function loadTeams() {
+        const parentDiv = document.getElementById('teamSection')
+    for (team of teams.teams) {
+        const teamRowDiv = document.createElement('div')
+
+        const teamLogoDiv = document.createElement('div')
+        teamLogoDiv.classList.add('team-section-side')
+        teamLogoDiv.classList.add('team-logo')
+
+        const teamImage = document.createElement('img')
+        teamImage.classList.add('team-section-image')
+        teamImage.src = team.team_image
+        teamImage.alt = team.team_name + ' logo'
+
+        teamLogoDiv.append(teamImage)
+        teamRowDiv.append(teamLogoDiv)
+
+        const middleDiv = document.createElement('div')
+        middleDiv.classList.add('team-section-middle')
+
+        const teamTitleDiv = document.createElement('div')
+        teamTitleDiv.classList.add('team-section-middle-top')
+
+        const teamTitle = document.createElement('h2')
+        teamTitle.innerHTML = team.team_name
+
+        teamTitleDiv.append(teamTitle)
+        middleDiv.append(teamTitleDiv)
+
+        const playerNameDiv = document.createElement('div')
+        playerNameDiv.classList.add('team-section-middle-bottom')
+
+        const playerName = document.createElement('h2')
+        playerName.innerHTML = team.players[0].player_name
+
+        playerNameDiv.append(playerName)
+        middleDiv.append(playerNameDiv)
+        teamRowDiv.append(middleDiv)
+
+        const playerImageDiv = document.createElement('div')
+        playerImageDiv.classList.add('team-section-side')
+        playerImageDiv.classList.add('top-player')
+
+        const playerImage = document.createElement('img')
+        playerImage.classList.add('team-section-image')
+        playerImage.src = team.players[0].player_image
+        playerImage.alt = team.players[0].player_name + ' headshot'
+
+        playerImageDiv.append(playerImage)
+        teamRowDiv.append(playerImageDiv)
+        parentDiv.append(teamRowDiv)
+    }
+}
+
+loadTeams()
