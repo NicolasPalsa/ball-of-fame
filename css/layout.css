@@ -1,3 +1,40 @@
+.bff {
+  text-align: center;
+}
+.search-container {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.search-bar {
+  width: 300px;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  margin: 10px auto;
+  background: #fff;
+}
+
+.search-icon {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #555;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  size: 100px 100px;
+}
 img.team-section-image {
-    height: 180px;
+  height: 180px;
 }

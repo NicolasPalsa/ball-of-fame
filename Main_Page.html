@@ -4,32 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ball Of Fame</title>
-    <link rel="stylesheet" href="/css/layout.css"/>
-    <link rel="stylesheet" href="/css/modal.css"/>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <script src="/js/data.js" defer></script>
   </head>
 
   <body class="body">
-
     <!-- Title and logo -->
     <div class="header">
       <h1 class="title">BALL OF FAME</h1>
-      <img class="logo" src="">
+      <img class="logo" src="" />
     </div>
 
     <!-- Search bar and result box -->
     <div class="search-bar">
-      <input class="search-input" id="search" type="text" placeholder="Search team or player">
-      <div class="search-results" id="result"></div> <!--style so it fits 3 results and is always the same size-->
+      <input
+        class="search-input"
+        id="search"
+        type="text"
+        placeholder="Search team or player"
+      />
+      <div class="search-results" id="result"></div>
+      <!--style so it fits 3 results and is always the same size-->
     </div>
 
     <!--- Team and top player, and the template --->
     <div class="team-section" id="teamSection">
-
       <!--TEMPLATE starts-->
       <div class="team-section-side team-logo">
-        <img class="team-section-image" src="/images/placeholder.png" alt="">
+        <img class="team-section-image" src="/images/placeholder.png" alt="" />
       </div>
 
       <div class="team-section-middle">
@@ -42,7 +46,7 @@
       </div>
 
       <div class="team-section-side top-player">
-        <img class="team-section-image" src="/images/placeholder.png" alt="">
+        <img class="team-section-image" src="/images/placeholder.png" alt="" />
       </div>
       <!--TEMPLATE ENDS-->
     </div>
@@ -56,7 +60,7 @@
       <h2 class="team-form-title">Add team form</h2>
       <form class="team-form">
         <div>
-          <img src="" alt="">
+          <img src="" alt="" />
           <div>
             <div>
               <label class="form-team-name-label">Name of team: </label>
@@ -80,27 +84,29 @@
 
           <div class="player">
             <div>
-              <img src="" alt="">
+              <img src="" alt="" />
             </div>
             <div class="player-input-box">
               <div class="player-input-row">
                 <div class="player-input-wrap">
                   <label class="player-label">Name of player</label>
-                  <input class="player-input" type="text">
+                  <input class="player-input" type="text" />
                 </div>
                 <div class="player-input-wrap">
                   <label class="player-label">Height of player</label>
-                  <input class="player-input" type="text">
+                  <input class="player-input" type="text" />
                 </div>
               </div>
               <div class="player-input-row">
                 <div class="player-input-wrap">
                   <label class="player-label">Points Per Game of player</label>
-                  <input class="player-input" type="text">
+                  <input class="player-input" type="text" />
                 </div>
                 <div class="player-input-wrap">
-                  <label class="player-label">Freethrow percentage of player</label>
-                  <input class="player-input" type="text">
+                  <label class="player-label"
+                    >Freethrow percentage of player</label
+                  >
+                  <input class="player-input" type="text" />
                 </div>
               </div>
             </div>
@@ -225,16 +231,13 @@
         <button class="team submit" type="submit">Submit</button>
       </form>
     </div>
-    
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <iframe id="video" width="840" height="630"
-            src="">
-        </iframe>
+        <iframe id="video" width="840" height="630" src=""> </iframe>
       </div>
     </div>
 
@@ -242,6 +245,5 @@
     <footer class="footer">
       <p class="copyright">© Ball Of Fame - Nicolas, Radin, Mujib</p>
     </footer>
-
   </body>
 </html>
