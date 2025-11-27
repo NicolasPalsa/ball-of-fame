@@ -1,30 +1,136 @@
 <!DOCTYPE html>
 <html lang="fi">
-  <link rel="stylesheet" href="layout.css" />
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ball Of Fame</title>
-    <link rel="stylesheet" href="/ball-of-fame/css/layout.css" />
-    <link
-      rel="shortcut icon"
-      href="/ball-of-fame/images/favicon.ico"
-      type="image/x-icon"
-    />
-    <script src="/ball-of-fame/js/data.js"></script>
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <script src="/js/data.js" defer></script>
   </head>
 
-  <body>
-    <h1 class="bff">Ball of Fame</h1>
+  <body class="body">
+    <!-- Title and logo -->
+    <div class="header">
+      <h1 class="title">BALL OF FAME</h1>
+      <img class="logo" src="" />
+    </div>
 
-    <img class="logo" src="bff.png" alt="" />
+    <!-- Search bar and result box -->
+    <div class="search-bar">
+      <input
+        class="search-input"
+        id="search"
+        type="text"
+        placeholder="Search team or player"
+      />
+      <div class="search-results" id="result"></div>
+      <!--style so it fits 3 results and is always the same size-->
+    </div>
 
-    <div class="search-container">
-      <p>Search for your player</p>
-      <div class="search-bar">
-        <span class="search-icon"></span>
-        <input type="text" placeholder="Search..." />
+    <!--- Team and top player, and the template --->
+    <div class="team-section" id="teamSection">
+      <!--TEMPLATE starts-->
+      <div class="team-section-side team-logo">
+        <img class="team-section-image" src="/images/placeholder.png" alt="" />
+      </div>
+
+      <div class="team-section-middle">
+        <div class="team-section-middle top">
+          <h2>TEAM TITLE</h2>
+        </div>
+        <div class="team-section-middle bottom">
+          <h2>TOP PLAYER</h2>
+        </div>
+      </div>
+
+      <div class="team-section-side top-player">
+        <img class="team-section-image" src="/images/placeholder.png" alt="" />
+      </div>
+      <!--TEMPLATE ENDS-->
+    </div>
+
+    <!-- Add team button, brings a new div into view, which has a form in it,
+      disappears when form is up, reappears when form is submitted -->
+    <button class="team add" id="addTeam">Add team</button>
+
+    <!-- Form for adding teams -->
+    <div class="team-form-section hidden">
+      <h2 class="team-form-title">Add team form</h2>
+      <form class="team-form">
+        <div>
+          <img src="" alt="" />
+          <div>
+            <div>
+              <label class="team-label">Name of team: </label>
+              <input class="team-input-name" type="text" />
+            </div>
+            <div>
+              <label class="team-label">Description of team: </label>
+              <input class="team-input-description" type="text" />
+            </div>
+          </div>
+        </div>
+
+        <div class="highlights">
+          <button class="hightlight" value="">Show highlight</button>
+          <button class="hightlight" value="">Show highlight</button>
+          <button class="hightlight" value="">Show highlight</button>
+        </div>
+
+        <!-- Player adding section -->
+        <div class="player-divs">
+          <div class="player">
+            <div>
+              <img src="" alt="" />
+            </div>
+            <div class="player-input-box">
+              <div class="player-input-row">
+                <div class="player-input-wrap">
+                  <label class="player-label">Name of player</label>
+                  <input class="player-input" type="text" />
+                </div>
+                <div class="player-input-wrap">
+                  <label class="player-label">Height of player</label>
+                  <input class="player-input" type="text" />
+                </div>
+              </div>
+
+              <div class="player-input-row">
+                <div class="player-input-wrap">
+                  <label class="player-label">Points Per Game of player</label>
+                  <input class="player-input" type="text" />
+                </div>
+                <div class="player-input-wrap">
+                  <label class="player-label"
+                    >Freethrow percentage of player</label
+                  >
+                  <input class="player-input" type="text" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- submits form, checks if everything is filled in correctly,
+          then saves info into localStorage, hides itself and shows the add team button -->
+        <button class="team submit" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe id="video" width="840" height="630" src=""> </iframe>
       </div>
     </div>
+
+    <!--footer-->
+    <footer class="footer">
+      <p class="copyright">© Ball Of Fame - Nicolas, Radin, Mujib</p>
+    </footer>
   </body>
 </html>

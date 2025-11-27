@@ -35,3 +35,6 @@
   display: flex;
   size: 100px 100px;
 }
+img.team-section-image {
+  height: 180px;
+}
