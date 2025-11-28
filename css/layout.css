@@ -28,8 +28,6 @@ h1.title {
   margin-left: auto;
   outline: none;
   font-size: 16px;
-  display: block;
-  justify-content: center;
 }
 
 .search-icon {
@@ -40,39 +38,15 @@ h1.title {
 
 .team-section {
   text-align: center;
-  margin-top: 50px;
-}
-img.team-section-image {
-  height: 180px;
-}
-
-/* New: Back to main button styles */
-.back-to-main {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  z-index: 1000;
+  flex-flow: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.back-to-main:hover {
-  background-color: #0056b3;
+.team-section-box {
+  display: flex;
+  flex-flow: row, nowrap;
 }
-
-/* New: Team section box hover effect */
-.team-section-box:hover {
-  background-color: #f0f0f0;
-  transform: scale(1.02);
-  transition: all 0.3s ease;
-}
-
-/* Hidden class for showing/hiding elements */
-.hidden {
-  display: none !important;
+.team-section-side img {
+  height: 184px;
 }
