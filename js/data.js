@@ -275,10 +275,12 @@ function search(searchList, searchTerm) {
 }
 
 function loadTeams() {
-        const parentDiv = document.getElementById('teamSection')
-        parentDiv.innerHTML = ''
-    for (const team of teams.teams) {
-        const teamRowDiv = document.createElement('div')
+  const parentDiv = document.getElementById('teamSection')
+  parentDiv.innerHTML = ''
+  for (const team of teams.teams) {
+    const teamRowDiv = document.createElement('div')
+    teamRowDiv.classList.add('team-section-box')
+    teamRowDiv.id = team.ID
 
     const teamLogoDiv = document.createElement("div")
     teamLogoDiv.classList.add("team-section-side")
@@ -336,7 +338,7 @@ function loadTeamPages() {
         const mainWrapDiv = document.createElement('div')
         mainWrapDiv.classList.add('addteam-page')
         mainWrapDiv.classList.add('hidden')
-        mainWrapDiv.id = 'TemporaryID'
+        mainWrapDiv.id = team.ID
 
         const teamPageTop = document.createElement('div')
         teamPageTop.classList.add('team-page-top')
