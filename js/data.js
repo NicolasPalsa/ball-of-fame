@@ -1,4 +1,4 @@
-const teams = {
+const teamsSetup = {
   teams: [
     {
       ID: 1,
@@ -230,6 +230,15 @@ const teams = {
     },
   ],
 }
+let teams = {}
+
+const rawTeams = localStorage.getItem('teams')
+if (rawTeams) {
+  teams = JSON.parse(rawTeams)
+} else {
+  teams = teamsSetup
+  localStorage.setItem("teams", JSON.stringify(teams))
+}
 
 document.getElementById("search").addEventListener("input", (e) => {
   const value = document.getElementById("search").value
@@ -237,7 +246,7 @@ document.getElementById("search").addEventListener("input", (e) => {
   const div = document.getElementById("result")
   div.innerHTML = ""
 
-  var searchArray = []
+  let searchArray = []
   teams.teams.forEach((team) => {
     searchArray.push(team.team_name)
     team.players.forEach((player) => {
@@ -274,6 +283,8 @@ function search(searchList, searchTerm) {
   }
 }
 
+// fix load teams and load team pages, it needs to get some sort of array of objects or json, and then use it to build the page
+// load teams also needs to work in a way where it can be sorted
 function loadTeams() {
   const parentDiv = document.getElementById('teamSection')
   parentDiv.innerHTML = ''
@@ -360,14 +371,17 @@ function loadTeamPages() {
         const topLeftLink1 = document.createElement('button')
         topLeftLink1.classList.add('team-page-highlight')
         topLeftLink1.value = team.highlight_1
+        topLeftLink1.innerHTML = 'Show highlight 1'
         
         const topLeftLink2 = document.createElement('button')
         topLeftLink2.classList.add('team-page-highlight')
         topLeftLink2.value = team.highlight_2
+        topLeftLink2.innerHTML = 'Show highlight 2'
         
         const topLeftLink3 = document.createElement('button')
         topLeftLink3.classList.add('team-page-highlight')
         topLeftLink3.value = team.highlight_3
+        topLeftLink3.innerHTML = 'Show highlight 3'
         
         topLeftLinks.append(topLeftLink1)
         topLeftLinks.append(topLeftLink2)
