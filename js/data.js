@@ -232,45 +232,45 @@ const teams = {
 }
 
 document.getElementById("search").addEventListener("input", (e) => {
-  const value = document.getElementById("search").value;
-  results = [];
-  const div = document.getElementById("result");
-  div.innerHTML = "";
+  const value = document.getElementById("search").value
+  results = []
+  const div = document.getElementById("result")
+  div.innerHTML = ""
 
-  var searchArray = [];
+  var searchArray = []
   teams.teams.forEach((team) => {
-    searchArray.push(team.team_name);
+    searchArray.push(team.team_name)
     team.players.forEach((player) => {
-      searchArray.push(player.player_name);
-    });
-  });
+      searchArray.push(player.player_name)
+    })
+  })
 
-  search(searchArray, value);
+  search(searchArray, value)
 
   for (result in results) {
     if (result >= 5) {
-      break;
+      break
     } else {
-      const p = document.createElement("p");
-      p.innerHTML = results[result];
-      p.id = results[result].toString().replaceAll(" ", "_");
-      div.append(p);
+      const p = document.createElement("p")
+      p.innerHTML = results[result]
+      p.id = results[result].toString().replaceAll(" ", "_")
+      div.append(p)
     }
   }
-});
+})
 
 function search(searchList, searchTerm) {
   if (!searchTerm) {
-    console.log("Nothing searched");
+    console.log("Nothing searched")
   } else {
     for (i of searchList) {
       if (
         i.slice(0, searchTerm.length).toLowerCase() === searchTerm.toLowerCase()
       ) {
-        results.push(i);
+        results.push(i)
       }
     }
-    results.sort();
+    results.sort()
   }
 }
 
@@ -280,52 +280,52 @@ function loadTeams() {
     for (const team of teams.teams) {
         const teamRowDiv = document.createElement('div')
 
-    const teamLogoDiv = document.createElement("div");
-    teamLogoDiv.classList.add("team-section-side");
-    teamLogoDiv.classList.add("team-logo");
+    const teamLogoDiv = document.createElement("div")
+    teamLogoDiv.classList.add("team-section-side")
+    teamLogoDiv.classList.add("team-logo")
 
-    const teamImage = document.createElement("img");
-    teamImage.classList.add("team-section-image");
+    const teamImage = document.createElement("img")
+    teamImage.classList.add("team-section-image")
     teamImage.src = team.team_image;
-    teamImage.alt = team.team_name + " logo";
+    teamImage.alt = team.team_name + " logo"
 
-    teamLogoDiv.append(teamImage);
-    teamRowDiv.append(teamLogoDiv);
+    teamLogoDiv.append(teamImage)
+    teamRowDiv.append(teamLogoDiv)
 
-    const middleDiv = document.createElement("div");
-    middleDiv.classList.add("team-section-middle");
+    const middleDiv = document.createElement("div")
+    middleDiv.classList.add("team-section-middle")
 
-    const teamTitleDiv = document.createElement("div");
-    teamTitleDiv.classList.add("team-section-middle-top");
+    const teamTitleDiv = document.createElement("div")
+    teamTitleDiv.classList.add("team-section-middle-top")
 
-    const teamTitle = document.createElement("h2");
-    teamTitle.innerHTML = team.team_name;
+    const teamTitle = document.createElement("h2")
+    teamTitle.innerHTML = team.team_name
 
-    teamTitleDiv.append(teamTitle);
-    middleDiv.append(teamTitleDiv);
+    teamTitleDiv.append(teamTitle)
+    middleDiv.append(teamTitleDiv)
 
-    const playerNameDiv = document.createElement("div");
-    playerNameDiv.classList.add("team-section-middle-bottom");
+    const playerNameDiv = document.createElement("div")
+    playerNameDiv.classList.add("team-section-middle-bottom")
 
-    const playerName = document.createElement("h2");
-    playerName.innerHTML = team.players[0].player_name;
+    const playerName = document.createElement("h2")
+    playerName.innerHTML = team.players[0].player_name
 
-    playerNameDiv.append(playerName);
-    middleDiv.append(playerNameDiv);
-    teamRowDiv.append(middleDiv);
+    playerNameDiv.append(playerName)
+    middleDiv.append(playerNameDiv)
+    teamRowDiv.append(middleDiv)
 
-    const playerImageDiv = document.createElement("div");
-    playerImageDiv.classList.add("team-section-side");
-    playerImageDiv.classList.add("top-player");
+    const playerImageDiv = document.createElement("div")
+    playerImageDiv.classList.add("team-section-side")
+    playerImageDiv.classList.add("top-player")
 
-    const playerImage = document.createElement("img");
-    playerImage.classList.add("team-section-image");
-    playerImage.src = team.players[0].player_image;
-    playerImage.alt = team.players[0].player_name + " headshot";
+    const playerImage = document.createElement("img")
+    playerImage.classList.add("team-section-image")
+    playerImage.src = team.players[0].player_image
+    playerImage.alt = team.players[0].player_name + " headshot"
 
-    playerImageDiv.append(playerImage);
-    teamRowDiv.append(playerImageDiv);
-    parentDiv.append(teamRowDiv);
+    playerImageDiv.append(playerImage)
+    teamRowDiv.append(playerImageDiv)
+    parentDiv.append(teamRowDiv)
   }
 }
 
@@ -418,9 +418,7 @@ function loadTeamPages() {
 
             teamPageBottom.append(teamPageBottomPlayer)
         }
-
         mainWrapDiv.append(teamPageBottom)
-
         parentDiv.append(mainWrapDiv)
     }
 }
@@ -477,7 +475,7 @@ document.getElementById("teamForm").addEventListener("submit", function (event) 
     } else {
       console.log("YouTube validation failed");
     }
-  });
+});
 
 loadTeams()
 loadTeamPages()
