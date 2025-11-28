@@ -6,7 +6,7 @@ const teams = {
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/lal.png&h=200&w=200",
       team_name: "Los Angeles Lakers",
       description:
-        "The Los Angeles Lakers are one of the most influential teams in professional basketball, a historic franchise with a storied legacy and many Hall of Famers. Across decades, they’ve defined multiple eras—from George Mikan’s early dominance to the Showtime years with Magic Johnson and Kareem Abdul-Jabbar, to the three-peat power of Kobe Bryant and Shaquille O’Neal—and now the modern era led by LeBron James, who added another championship to the team’s legacy in 2020. Their identity is built on excellence, star talent, and constant championship expectations, supported by a global fanbase and a cultural presence that goes far beyond basketball. With iconic rivalries, especially against the Boston Celtics, and a long history of attracting generational superstars, the Lakers remain a central force in NBA history and a symbol of sustained ambition and success.",
+        "The Los Angeles Lakers are one of the most influential teams in professional basketball, a historic franchise with a storied legacy and many Hall of Famers. Across decades, they've defined multiple eras—from George Mikan's early dominance to the Showtime years with Magic Johnson and Kareem Abdul-Jabbar, to the three-peat power of Kobe Bryant and Shaquille O'Neal—and now the modern era led by LeBron James, who added another championship to the team's legacy in 2020. Their identity is built on excellence, star talent, and constant championship expectations, supported by a global fanbase and a cultural presence that goes far beyond basketball. With iconic rivalries, especially against the Boston Celtics, and a long history of attracting generational superstars, the Lakers remain a central force in NBA history and a symbol of sustained ambition and success.",
       added_to_ball_of_fame: "2025-11-19T00:00:00.000Z",
       highlight_1:
         "https://www.youtube.com/embed/FVmO71_mxrk?si=0WDCA-ZOfyILm3Bi",
@@ -63,7 +63,7 @@ const teams = {
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gs.png",
       team_name: "Golden State Warriors",
       description:
-        "The Golden State Warriors are a franchise known for its shooting, pace, and modern dynasty, redefining how basketball is played through elite spacing, relentless ball movement, and record-breaking three-point shooting. Their rise began with the emergence of Stephen Curry, whose shooting range restructured defensive strategy league-wide, supported by Klay Thompson’s sharpshooting and Draymond Green’s versatility. Under Steve Kerr, the Warriors built a system focused on speed, off-ball movement, and unselfish play, leading to multiple championships and one of the most dominant stretches in NBA history. Their impact goes far beyond wins: they altered the league’s offensive philosophy, influenced how teams are built, and cemented themselves as one of the defining teams of the modern era.",
+        "The Golden State Warriors are a franchise known for its shooting, pace, and modern dynasty, redefining how basketball is played through elite spacing, relentless ball movement, and record-breaking three-point shooting. Their rise began with the emergence of Stephen Curry, whose shooting range restructured defensive strategy league-wide, supported by Klay Thompson's sharpshooting and Draymond Green's versatility. Under Steve Kerr, the Warriors built a system focused on speed, off-ball movement, and unselfish play, leading to multiple championships and one of the most dominant stretches in NBA history. Their impact goes far beyond wins: they altered the league's offensive philosophy, influenced how teams are built, and cemented themselves as one of the defining teams of the modern era.",
       added_to_ball_of_fame: "2025-11-18T00:00:00.000Z",
       highlight_1:
         "https://www.youtube.com/embed/aAXSoKRrHXs?si=hhL_sUxGPyDgc7Bt",
@@ -120,7 +120,7 @@ const teams = {
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/chi.png",
       team_name: "Chicago Bulls",
       description:
-        "The Chicago Bulls are legendary for their 90s dominance and Michael Jordan’s era, a period that transformed the franchise into a global phenomenon and set a standard for excellence in professional basketball. With Jordan’s unmatched scoring and competitive drive, Scottie Pippen’s elite two-way play, and Phil Jackson’s triangle offense, the Bulls secured six championships in eight years and became the defining team of the decade. Their style, star power, and cultural impact extended far beyond the court, influencing fashion, media, and international interest in the NBA. Even after the dynasty years, the Bulls’ identity remains tied to that historic run, standing as one of the league’s most iconic and influential franchises.",
+        "The Chicago Bulls are legendary for their 90s dominance and Michael Jordan's era, a period that transformed the franchise into a global phenomenon and set a standard for excellence in professional basketball. With Jordan's unmatched scoring and competitive drive, Scottie Pippen's elite two-way play, and Phil Jackson's triangle offense, the Bulls secured six championships in eight years and became the defining team of the decade. Their style, star power, and cultural impact extended far beyond the court, influencing fashion, media, and international interest in the NBA. Even after the dynasty years, the Bulls' identity remains tied to that historic run, standing as one of the league's most iconic and influential franchises.",
       added_to_ball_of_fame: "2025-11-17T00:00:00.000Z",
       highlight_1:
         "https://www.youtube.com/embed/oX6J8gDfzlg?si=c7iVyJ5cuh0BOmNY",
@@ -177,7 +177,7 @@ const teams = {
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/2.png",
       team_name: "Boston Celtics",
       description:
-        "The Boston Celtics are one of the most successful and tradition-rich franchises in basketball history, defined by a culture of winning, toughness, and consistency across generations. From the Bill Russell dynasty that established the team as a dominant force, to the Larry Bird era that fueled some of the NBA’s greatest rivalries, to the modern resurgence led by stars like Paul Pierce and later the Jayson Tatum–Jaylen Brown core, the Celtics have maintained a reputation for excellence built on defense, teamwork, and player development. Their unmatched collection of championships, iconic rivalries—especially with the Lakers—and deep historical influence make them a cornerstone of the NBA and a symbol of sustained competitive identity.",
+        "The Boston Celtics are one of the most successful and tradition-rich franchises in basketball history, defined by a culture of winning, toughness, and consistency across generations. From the Bill Russell dynasty that established the team as a dominant force, to the Larry Bird era that fueled some of the NBA's greatest rivalries, to the modern resurgence led by stars like Paul Pierce and later the Jayson Tatum–Jaylen Brown core, the Celtics have maintained a reputation for excellence built on defense, teamwork, and player development. Their unmatched collection of championships, iconic rivalries—especially with the Lakers—and deep historical influence make them a cornerstone of the NBA and a symbol of sustained competitive identity.",
       added_to_ball_of_fame: "2025-11-16T00:00:00.000Z",
       highlight_1:
         "https://www.youtube.com/embed/8E36LwXGADY?si=VLzTJYxTcoGgNAgY",
@@ -229,200 +229,293 @@ const teams = {
       ],
     },
   ],
+};
+
+// thats the Function to create slug from team name
+function createSlug(teamName) {
+  return teamName
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
+// New: Function to show team page and hide others
+function showTeamPage(teamId) {
+  // Hide all main page elements
+  document.querySelector(".header").classList.add("hidden");
+  document.querySelector(".search-bar").classList.add("hidden");
+  document.querySelector(".team-section").classList.add("hidden");
+  document.querySelector("#addTeam").classList.add("hidden");
+
+  // Hide all team pages
+  const allTeamPages = document.querySelectorAll(".addteam-page");
+  allTeamPages.forEach((page) => {
+    page.classList.add("hidden");
+  });
+
+  // Show the selected team page
+  const selectedTeamPage = document.getElementById(teamId);
+  if (selectedTeamPage) {
+    selectedTeamPage.classList.remove("hidden");
+  }
+
+  // Show back button
+  document.getElementById("backToMain").classList.remove("hidden");
+
+  // Update URL with slug
+  const team = teams.teams.find((t) => t.ID == teamId);
+  if (team) {
+    const slug = createSlug(team.team_name);
+    window.history.pushState({ teamId: teamId }, "", `#${slug}`);
+  }
+}
+
+// New: Function to go back to main page
+function goBackToMain() {
+  // Show all main page elements
+  document.querySelector(".header").classList.remove("hidden");
+  document.querySelector(".search-bar").classList.remove("hidden");
+  document.querySelector(".team-section").classList.remove("hidden");
+  document.querySelector("#addTeam").classList.remove("hidden");
+
+  // Hide all team pages
+  const allTeamPages = document.querySelectorAll(".addteam-page");
+  allTeamPages.forEach((page) => {
+    page.classList.add("hidden");
+  });
+
+  // Hide back button
+  document.getElementById("backToMain").classList.add("hidden");
+
+  // Update URL
+  window.history.pushState({}, "", window.location.pathname);
+}
+
+// New: Handle browser back/forward buttons
+window.addEventListener("popstate", function (event) {
+  if (window.location.hash) {
+    const slug = window.location.hash.substring(1);
+    const team = teams.teams.find((t) => createSlug(t.team_name) === slug);
+    if (team) {
+      showTeamPage(team.ID);
+    }
+  } else {
+    goBackToMain();
+  }
+});
+
+// New: Check URL on page load
+window.addEventListener("load", function () {
+  if (window.location.hash) {
+    const slug = window.location.hash.substring(1);
+    const team = teams.teams.find((t) => createSlug(t.team_name) === slug);
+    if (team) {
+      showTeamPage(team.ID);
+    }
+  }
+});
+
 document.getElementById("search").addEventListener("input", (e) => {
-  const value = document.getElementById("search").value
-  results = []
-  const div = document.getElementById("result")
-  div.innerHTML = ""
+  const value = document.getElementById("search").value;
+  results = [];
+  const div = document.getElementById("result");
+  div.innerHTML = "";
 
-  var searchArray = []
+  var searchArray = [];
   teams.teams.forEach((team) => {
-    searchArray.push(team.team_name)
+    searchArray.push(team.team_name);
     team.players.forEach((player) => {
-      searchArray.push(player.player_name)
-    })
-  })
+      searchArray.push(player.player_name);
+    });
+  });
 
-  search(searchArray, value)
+  search(searchArray, value);
 
   for (result in results) {
     if (result >= 5) {
-      break
+      break;
     } else {
-      const p = document.createElement("p")
-      p.innerHTML = results[result]
-      p.id = results[result].toString().replaceAll(" ", "_")
-      div.append(p)
+      const p = document.createElement("p");
+      p.innerHTML = results[result];
+      p.id = results[result].toString().replaceAll(" ", "_");
+      div.append(p);
     }
   }
-})
+});
 
 function search(searchList, searchTerm) {
   if (!searchTerm) {
-    console.log("Nothing searched")
+    console.log("Nothing searched");
   } else {
     for (i of searchList) {
       if (
         i.slice(0, searchTerm.length).toLowerCase() === searchTerm.toLowerCase()
       ) {
-        results.push(i)
+        results.push(i);
       }
     }
-    results.sort()
+    results.sort();
   }
 }
 
 function loadTeams() {
-  const parentDiv = document.getElementById('teamSection')
-  parentDiv.innerHTML = ''
+  const parentDiv = document.getElementById("teamSection");
+  parentDiv.innerHTML = "";
   for (const team of teams.teams) {
-    const teamRowDiv = document.createElement('div')
-    teamRowDiv.classList.add('team-section-box')
-    teamRowDiv.id = team.ID
+    const teamRowDiv = document.createElement("div");
+    teamRowDiv.classList.add("team-section-box");
+    teamRowDiv.id = "team-" + team.ID; // New: Add prefix to avoid conflict
 
-    const teamLogoDiv = document.createElement("div")
-    teamLogoDiv.classList.add("team-section-side")
-    teamLogoDiv.classList.add("team-logo")
+    // New: Add click event to show team page
+    teamRowDiv.addEventListener("click", function () {
+      showTeamPage(team.ID);
+    });
+    teamRowDiv.style.cursor = "pointer"; // New: Show pointer cursor
 
-    const teamImage = document.createElement("img")
-    teamImage.classList.add("team-section-image")
+    const teamLogoDiv = document.createElement("div");
+    teamLogoDiv.classList.add("team-section-side");
+    teamLogoDiv.classList.add("team-logo");
+
+    const teamImage = document.createElement("img");
+    teamImage.classList.add("team-section-image");
     teamImage.src = team.team_image;
-    teamImage.alt = team.team_name + " logo"
+    teamImage.alt = team.team_name + " logo";
 
-    teamLogoDiv.append(teamImage)
-    teamRowDiv.append(teamLogoDiv)
+    teamLogoDiv.append(teamImage);
+    teamRowDiv.append(teamLogoDiv);
 
-    const middleDiv = document.createElement("div")
-    middleDiv.classList.add("team-section-middle")
+    const middleDiv = document.createElement("div");
+    middleDiv.classList.add("team-section-middle");
 
-    const teamTitleDiv = document.createElement("div")
-    teamTitleDiv.classList.add("team-section-middle-top")
+    const teamTitleDiv = document.createElement("div");
+    teamTitleDiv.classList.add("team-section-middle-top");
 
-    const teamTitle = document.createElement("h2")
-    teamTitle.innerHTML = team.team_name
+    const teamTitle = document.createElement("h2");
+    teamTitle.innerHTML = team.team_name;
 
-    teamTitleDiv.append(teamTitle)
-    middleDiv.append(teamTitleDiv)
+    teamTitleDiv.append(teamTitle);
+    middleDiv.append(teamTitleDiv);
 
-    const playerNameDiv = document.createElement("div")
-    playerNameDiv.classList.add("team-section-middle-bottom")
+    const playerNameDiv = document.createElement("div");
+    playerNameDiv.classList.add("team-section-middle-bottom");
 
-    const playerName = document.createElement("h2")
-    playerName.innerHTML = team.players[0].player_name
+    const playerName = document.createElement("h2");
+    playerName.innerHTML = team.players[0].player_name;
 
-    playerNameDiv.append(playerName)
-    middleDiv.append(playerNameDiv)
-    teamRowDiv.append(middleDiv)
+    playerNameDiv.append(playerName);
+    middleDiv.append(playerNameDiv);
+    teamRowDiv.append(middleDiv);
 
-    const playerImageDiv = document.createElement("div")
-    playerImageDiv.classList.add("team-section-side")
-    playerImageDiv.classList.add("top-player")
+    const playerImageDiv = document.createElement("div");
+    playerImageDiv.classList.add("team-section-side");
+    playerImageDiv.classList.add("top-player");
 
-    const playerImage = document.createElement("img")
-    playerImage.classList.add("team-section-image")
-    playerImage.src = team.players[0].player_image
-    playerImage.alt = team.players[0].player_name + " headshot"
+    const playerImage = document.createElement("img");
+    playerImage.classList.add("team-section-image");
+    playerImage.src = team.players[0].player_image;
+    playerImage.alt = team.players[0].player_name + " headshot";
 
-    playerImageDiv.append(playerImage)
-    teamRowDiv.append(playerImageDiv)
-    parentDiv.append(teamRowDiv)
+    playerImageDiv.append(playerImage);
+    teamRowDiv.append(playerImageDiv);
+    parentDiv.append(teamRowDiv);
   }
 }
 
 function loadTeamPages() {
-    const parentDiv = document.getElementById('teamPages')
-    parentDiv.innerHTML = ''
-    for (const team of teams.teams) {
-        const mainWrapDiv = document.createElement('div')
-        mainWrapDiv.classList.add('addteam-page')
-        mainWrapDiv.classList.add('hidden')
-        mainWrapDiv.id = team.ID
+  const parentDiv = document.getElementById("teamPages");
+  parentDiv.innerHTML = "";
+  for (const team of teams.teams) {
+    const mainWrapDiv = document.createElement("div");
+    mainWrapDiv.classList.add("addteam-page");
+    mainWrapDiv.classList.add("hidden");
+    mainWrapDiv.id = team.ID; // This ID is used to show the team page
 
-        const teamPageTop = document.createElement('div')
-        teamPageTop.classList.add('team-page-top')
+    const teamPageTop = document.createElement("div");
+    teamPageTop.classList.add("team-page-top");
 
-        const teamPageTopLeft = document.createElement('div')
-        teamPageTopLeft.classList.add('team-page-top-left')
+    const teamPageTopLeft = document.createElement("div");
+    teamPageTopLeft.classList.add("team-page-top-left");
 
-        const topLeftImg = document.createElement('img')
-        topLeftImg.src = team.team_image
-        topLeftImg.alt = team.team_name + ' logo'
+    const topLeftImg = document.createElement("img");
+    topLeftImg.src = team.team_image;
+    topLeftImg.alt = team.team_name + " logo";
 
-        const topLeftHeader = document.createElement('h3')
-        topLeftHeader.classList.add('team-page-link-title')
-        topLeftHeader.innerHTML = 'Highlights'
+    const topLeftHeader = document.createElement("h3");
+    topLeftHeader.classList.add("team-page-link-title");
+    topLeftHeader.innerHTML = "Highlights";
 
-        const topLeftLinks = document.createElement('div')
-        topLeftLinks.classList.add('team-page-links')
+    const topLeftLinks = document.createElement("div");
+    topLeftLinks.classList.add("team-page-links");
 
-        const topLeftLink1 = document.createElement('button')
-        topLeftLink1.classList.add('team-page-highlight')
-        topLeftLink1.value = team.highlight_1
-        
-        const topLeftLink2 = document.createElement('button')
-        topLeftLink2.classList.add('team-page-highlight')
-        topLeftLink2.value = team.highlight_2
-        
-        const topLeftLink3 = document.createElement('button')
-        topLeftLink3.classList.add('team-page-highlight')
-        topLeftLink3.value = team.highlight_3
-        
-        topLeftLinks.append(topLeftLink1)
-        topLeftLinks.append(topLeftLink2)
-        topLeftLinks.append(topLeftLink3)
+    const topLeftLink1 = document.createElement("button");
+    topLeftLink1.classList.add("team-page-highlight");
+    topLeftLink1.value = team.highlight_1;
+    topLeftLink1.innerHTML = "Highlight 1"; // New: Add text to button
 
-        teamPageTopLeft.append(topLeftImg)
-        teamPageTopLeft.append(topLeftHeader)
-        teamPageTopLeft.append(topLeftLinks)
+    const topLeftLink2 = document.createElement("button");
+    topLeftLink2.classList.add("team-page-highlight");
+    topLeftLink2.value = team.highlight_2;
+    topLeftLink2.innerHTML = "Highlight 2"; // New: Add text to button
 
-        teamPageTop.append(teamPageTopLeft)
+    const topLeftLink3 = document.createElement("button");
+    topLeftLink3.classList.add("team-page-highlight");
+    topLeftLink3.value = team.highlight_3;
+    topLeftLink3.innerHTML = "Highlight 3"; // New: Add text to button
 
-        const teamPageTopRight = document.createElement('div')
-        teamPageTopRight.classList.add('team-page-top-right')
+    topLeftLinks.append(topLeftLink1);
+    topLeftLinks.append(topLeftLink2);
+    topLeftLinks.append(topLeftLink3);
 
-        const topRightParagraph = document.createElement('p')
-        topRightParagraph.classList.add('team-page-description')
-        topRightParagraph.innerHTML = team.description
-        teamPageTopRight.append(topRightParagraph)
-        teamPageTop.append(teamPageTopRight)
-        mainWrapDiv.append(teamPageTop)
+    teamPageTopLeft.append(topLeftImg);
+    teamPageTopLeft.append(topLeftHeader);
+    teamPageTopLeft.append(topLeftLinks);
 
-        const teamPageBottom = document.createElement('div')
-        teamPageBottom.classList.add('team-page-bottom')
+    teamPageTop.append(teamPageTopLeft);
 
-        for (const player of team.players) {
-            const teamPageBottomPlayer = document.createElement('div')
-            teamPageBottomPlayer.classList.add('team-page-bottom-player')
+    const teamPageTopRight = document.createElement("div");
+    teamPageTopRight.classList.add("team-page-top-right");
 
-            const bottomPlayerImg = document.createElement('img')
-            bottomPlayerImg.classList.add('team-page-bottom-player-image')
-            bottomPlayerImg.src = player.player_image
-            bottomPlayerImg.alt = player.player_name + ' headshot'
+    const topRightParagraph = document.createElement("p");
+    topRightParagraph.classList.add("team-page-description");
+    topRightParagraph.innerHTML = team.description;
+    teamPageTopRight.append(topRightParagraph);
+    teamPageTop.append(teamPageTopRight);
+    mainWrapDiv.append(teamPageTop);
 
-            const bottomPlayerHeight = document.createElement('p')
-            bottomPlayerHeight.classList.add('team-page-bottom-player-stats')
-            bottomPlayerHeight.innerHTML = player.height
+    const teamPageBottom = document.createElement("div");
+    teamPageBottom.classList.add("team-page-bottom");
 
-            const bottomPlayerPPG = document.createElement('p')
-            bottomPlayerPPG.classList.add('team-page-bottom-player-stats')
-            bottomPlayerPPG.innerHTML = player.best_ppg
+    for (const player of team.players) {
+      const teamPageBottomPlayer = document.createElement("div");
+      teamPageBottomPlayer.classList.add("team-page-bottom-player");
 
-            const bottomPlayerFreethrow = document.createElement('p')
-            bottomPlayerFreethrow.classList.add('team-page-bottom-player-stats')
-            bottomPlayerFreethrow.innerHTML = player.freethrow_percentage
+      const bottomPlayerImg = document.createElement("img");
+      bottomPlayerImg.classList.add("team-page-bottom-player-image");
+      bottomPlayerImg.src = player.player_image;
+      bottomPlayerImg.alt = player.player_name + " headshot";
 
-            teamPageBottomPlayer.append(bottomPlayerImg)
-            teamPageBottomPlayer.append(bottomPlayerHeight)
-            teamPageBottomPlayer.append(bottomPlayerPPG)
-            teamPageBottomPlayer.append(bottomPlayerFreethrow)
+      const bottomPlayerHeight = document.createElement("p");
+      bottomPlayerHeight.classList.add("team-page-bottom-player-stats");
+      bottomPlayerHeight.innerHTML = "Height: " + player.height + " cm";
 
-            teamPageBottom.append(teamPageBottomPlayer)
-        }
-        mainWrapDiv.append(teamPageBottom)
-        parentDiv.append(mainWrapDiv)
+      const bottomPlayerPPG = document.createElement("p");
+      bottomPlayerPPG.classList.add("team-page-bottom-player-stats");
+      bottomPlayerPPG.innerHTML = "PPG: " + player.best_ppg;
+
+      const bottomPlayerFreethrow = document.createElement("p");
+      bottomPlayerFreethrow.classList.add("team-page-bottom-player-stats");
+      bottomPlayerFreethrow.innerHTML = "FT%: " + player.freethrow_percentage;
+
+      teamPageBottomPlayer.append(bottomPlayerImg);
+      teamPageBottomPlayer.append(bottomPlayerHeight);
+      teamPageBottomPlayer.append(bottomPlayerPPG);
+      teamPageBottomPlayer.append(bottomPlayerFreethrow);
+
+      teamPageBottom.append(teamPageBottomPlayer);
     }
+    mainWrapDiv.append(teamPageBottom);
+    parentDiv.append(mainWrapDiv);
+  }
 }
 
 // YouTube embed link validation function
@@ -434,7 +527,9 @@ function isValidYouTubeEmbedLink(link) {
 }
 
 // Form submission handler
-document.getElementById("teamForm").addEventListener("submit", function (event) {
+document
+  .getElementById("teamForm")
+  .addEventListener("submit", function (event) {
     event.preventDefault();
 
     console.log("Form submitted - validating YouTube links...");
@@ -477,7 +572,10 @@ document.getElementById("teamForm").addEventListener("submit", function (event) 
     } else {
       console.log("YouTube validation failed");
     }
-});
+  });
 
-loadTeams()
-loadTeamPages()
+// New: Add event listener for back button
+document.getElementById("backToMain").addEventListener("click", goBackToMain);
+
+loadTeams();
+loadTeamPages();

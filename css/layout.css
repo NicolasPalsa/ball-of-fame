@@ -45,3 +45,34 @@ h1.title {
 img.team-section-image {
   height: 180px;
 }
+
+/* New: Back to main button styles */
+.back-to-main {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+.back-to-main:hover {
+  background-color: #0056b3;
+}
+
+/* New: Team section box hover effect */
+.team-section-box:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Hidden class for showing/hiding elements */
+.hidden {
+  display: none !important;
+}
