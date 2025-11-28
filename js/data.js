@@ -439,7 +439,6 @@ function loadTeamPages() {
     }
 }
 
-// YouTube embed link validation function
 function isValidYouTubeEmbedLink(link) {
   if (!link.trim()) return false;
   const youtubeEmbedRegex =
@@ -447,13 +446,11 @@ function isValidYouTubeEmbedLink(link) {
   return youtubeEmbedRegex.test(link.trim());
 }
 
-// Form submission handler
 document.getElementById("teamForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
     console.log("Form submitted - validating YouTube links...");
 
-    // Clear previous YouTube errors
     const youtubeErrors = [
       "highlight1Error",
       "highlight2Error",
@@ -465,7 +462,6 @@ document.getElementById("teamForm").addEventListener("submit", function (event) 
 
     let isValid = true;
 
-    // Validate all 3 YouTube embed links
     const youtubeInputs = document.querySelectorAll(".form-hightlight-input");
     youtubeInputs.forEach((input, index) => {
       const errorElement = document.getElementById(
@@ -482,7 +478,6 @@ document.getElementById("teamForm").addEventListener("submit", function (event) 
       }
     });
 
-    // If validation passes, call save function
     if (isValid) {
       console.log("All YouTube links valid - proceeding with save");
       if (typeof saveTeamData === "function") {
