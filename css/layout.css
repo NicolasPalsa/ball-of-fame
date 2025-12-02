@@ -50,3 +50,7 @@ h1.title {
 .team-section-side img {
   height: 184px;
 }
+
+.hidden {
+  display: none;
+}
