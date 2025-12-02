@@ -1,4 +1,4 @@
-const teamsSetup = {
+const teams = {
   teams: [
     {
       ID: 1,
@@ -229,214 +229,204 @@ const teamsSetup = {
       ],
     },
   ],
-}
-let teams = {}
-
-const rawTeams = localStorage.getItem('teams')
-if (rawTeams) {
-  teams = JSON.parse(rawTeams)
-} else {
-  teams = teamsSetup
-  localStorage.setItem("teams", JSON.stringify(teams))
-}
+};
 
 document.getElementById("search").addEventListener("input", (e) => {
-  const value = document.getElementById("search").value
-  results = []
-  const div = document.getElementById("result")
-  div.innerHTML = ""
+  const value = document.getElementById("search").value;
+  results = [];
+  const div = document.getElementById("result");
+  div.innerHTML = "";
 
-  let searchArray = []
+  var searchArray = [];
   teams.teams.forEach((team) => {
-    searchArray.push(team.team_name)
+    searchArray.push(team.team_name);
     team.players.forEach((player) => {
-      searchArray.push(player.player_name)
-    })
-  })
+      searchArray.push(player.player_name);
+    });
+  });
 
-  search(searchArray, value)
+  search(searchArray, value);
 
   for (result in results) {
     if (result >= 5) {
-      break
+      break;
     } else {
-      const p = document.createElement("p")
-      p.innerHTML = results[result]
-      p.id = results[result].toString().replaceAll(" ", "_")
-      div.append(p)
+      const p = document.createElement("p");
+      p.innerHTML = results[result];
+      p.id = results[result].toString().replaceAll(" ", "_");
+      div.append(p);
     }
   }
-})
+});
 
 function search(searchList, searchTerm) {
   if (!searchTerm) {
-    console.log("Nothing searched")
+    console.log("Nothing searched");
   } else {
     for (i of searchList) {
       if (
         i.slice(0, searchTerm.length).toLowerCase() === searchTerm.toLowerCase()
       ) {
-        results.push(i)
+        results.push(i);
       }
     }
-    results.sort()
+    results.sort();
   }
 }
 
 function loadTeams() {
-  const parentDiv = document.getElementById('teamSection')
-  parentDiv.innerHTML = ''
+  const parentDiv = document.getElementById("teamSection");
+  parentDiv.innerHTML = "";
   for (const team of teams.teams) {
-    const teamRowDiv = document.createElement('div')
-    teamRowDiv.classList.add('team-section-box')
-    teamRowDiv.id = team.ID
+    const teamRowDiv = document.createElement("div");
+    teamRowDiv.classList.add("team-section-box");
+    teamRowDiv.id = team.ID;
 
-    const teamLogoDiv = document.createElement("div")
-    teamLogoDiv.classList.add("team-section-side")
-    teamLogoDiv.classList.add("team-logo")
+    const teamLogoDiv = document.createElement("div");
+    teamLogoDiv.classList.add("team-section-side");
+    teamLogoDiv.classList.add("team-logo");
 
-    const teamImage = document.createElement("img")
-    teamImage.classList.add("team-section-image")
-    teamImage.src = team.team_image
-    teamImage.alt = team.team_name + " logo"
+    const teamImage = document.createElement("img");
+    teamImage.classList.add("team-section-image");
+    teamImage.src = team.team_image;
+    teamImage.alt = team.team_name + " logo";
 
-    teamLogoDiv.append(teamImage)
-    teamRowDiv.append(teamLogoDiv)
+    teamLogoDiv.append(teamImage);
+    teamRowDiv.append(teamLogoDiv);
 
-    const middleDiv = document.createElement("div")
-    middleDiv.classList.add("team-section-middle")
+    const middleDiv = document.createElement("div");
+    middleDiv.classList.add("team-section-middle");
 
-    const teamTitleDiv = document.createElement("div")
-    teamTitleDiv.classList.add("team-section-middle-top")
+    const teamTitleDiv = document.createElement("div");
+    teamTitleDiv.classList.add("team-section-middle-top");
 
-    const teamTitle = document.createElement("h2")
-    teamTitle.innerHTML = team.team_name
+    const teamTitle = document.createElement("h2");
+    teamTitle.innerHTML = team.team_name;
 
-    teamTitleDiv.append(teamTitle)
-    middleDiv.append(teamTitleDiv)
+    teamTitleDiv.append(teamTitle);
+    middleDiv.append(teamTitleDiv);
 
-    const playerNameDiv = document.createElement("div")
-    playerNameDiv.classList.add("team-section-middle-bottom")
+    const playerNameDiv = document.createElement("div");
+    playerNameDiv.classList.add("team-section-middle-bottom");
 
-    const playerName = document.createElement("h2")
-    playerName.innerHTML = team.players[0].player_name
+    const playerName = document.createElement("h2");
+    playerName.innerHTML = team.players[0].player_name;
 
-    playerNameDiv.append(playerName)
-    middleDiv.append(playerNameDiv)
-    teamRowDiv.append(middleDiv)
+    playerNameDiv.append(playerName);
+    middleDiv.append(playerNameDiv);
+    teamRowDiv.append(middleDiv);
 
-    const playerImageDiv = document.createElement("div")
-    playerImageDiv.classList.add("team-section-side")
-    playerImageDiv.classList.add("top-player")
+    const playerImageDiv = document.createElement("div");
+    playerImageDiv.classList.add("team-section-side");
+    playerImageDiv.classList.add("top-player");
 
-    const playerImage = document.createElement("img")
-    playerImage.classList.add("team-section-image")
-    playerImage.src = team.players[0].player_image
-    playerImage.alt = team.players[0].player_name + " headshot"
+    const playerImage = document.createElement("img");
+    playerImage.classList.add("team-section-image");
+    playerImage.src = team.players[0].player_image;
+    playerImage.alt = team.players[0].player_name + " headshot";
 
-    playerImageDiv.append(playerImage)
-    teamRowDiv.append(playerImageDiv)
-    parentDiv.append(teamRowDiv)
+    playerImageDiv.append(playerImage);
+    teamRowDiv.append(playerImageDiv);
+    parentDiv.append(teamRowDiv);
   }
 }
 
 function loadTeamPages() {
-  const parentDiv = document.getElementById('teamPages')
-  parentDiv.innerHTML = ''
+  const parentDiv = document.getElementById("teamPages");
+  parentDiv.innerHTML = "";
   for (const team of teams.teams) {
-    const mainWrapDiv = document.createElement('div')
-    mainWrapDiv.classList.add('addteam-page')
-    mainWrapDiv.classList.add('hidden')
-    mainWrapDiv.id = team.ID
+    const mainWrapDiv = document.createElement("div");
+    mainWrapDiv.classList.add("addteam-page");
+    mainWrapDiv.classList.add("hidden");
+    mainWrapDiv.id = team.ID;
 
-    const teamPageTop = document.createElement('div')
-    teamPageTop.classList.add('team-page-top')
+    const teamPageTop = document.createElement("div");
+    teamPageTop.classList.add("team-page-top");
 
-    const teamPageTopLeft = document.createElement('div')
-    teamPageTopLeft.classList.add('team-page-top-left')
+    const teamPageTopLeft = document.createElement("div");
+    teamPageTopLeft.classList.add("team-page-top-left");
 
-    const topLeftImg = document.createElement('img')
-    topLeftImg.src = team.team_image
-    topLeftImg.alt = team.team_name + ' logo'
+    const topLeftImg = document.createElement("img");
+    topLeftImg.src = team.team_image;
+    topLeftImg.alt = team.team_name + " logo";
 
-    const topLeftHeader = document.createElement('h3')
-    topLeftHeader.classList.add('team-page-link-title')
-    topLeftHeader.innerHTML = 'Highlights'
+    const topLeftHeader = document.createElement("h3");
+    topLeftHeader.classList.add("team-page-link-title");
+    topLeftHeader.innerHTML = "Highlights";
 
-    const topLeftLinks = document.createElement('div')
-    topLeftLinks.classList.add('team-page-links')
+    const topLeftLinks = document.createElement("div");
+    topLeftLinks.classList.add("team-page-links");
 
-    const topLeftLink1 = document.createElement('button')
-    topLeftLink1.classList.add('team-page-highlight')
-    topLeftLink1.value = team.highlight_1
-    topLeftLink1.innerHTML = 'Show highlight 1'
-        
-    const topLeftLink2 = document.createElement('button')
-    topLeftLink2.classList.add('team-page-highlight')
-    topLeftLink2.value = team.highlight_2
-    topLeftLink2.innerHTML = 'Show highlight 2'
-        
-    const topLeftLink3 = document.createElement('button')
-    topLeftLink3.classList.add('team-page-highlight')
-    topLeftLink3.value = team.highlight_3
-    topLeftLink3.innerHTML = 'Show highlight 3'
-        
-    topLeftLinks.append(topLeftLink1)
-    topLeftLinks.append(topLeftLink2)
-    topLeftLinks.append(topLeftLink3)
+    const topLeftLink1 = document.createElement("button");
+    topLeftLink1.classList.add("team-page-highlight");
+    topLeftLink1.value = team.highlight_1;
+    topLeftLink1.innerHTML = "Show highlight 1";
 
-    teamPageTopLeft.append(topLeftImg)
-    teamPageTopLeft.append(topLeftHeader)
-    teamPageTopLeft.append(topLeftLinks)
+    const topLeftLink2 = document.createElement("button");
+    topLeftLink2.classList.add("team-page-highlight");
+    topLeftLink2.value = team.highlight_2;
+    topLeftLink2.innerHTML = "Show highlight 2";
 
-    teamPageTop.append(teamPageTopLeft)
+    const topLeftLink3 = document.createElement("button");
+    topLeftLink3.classList.add("team-page-highlight");
+    topLeftLink3.value = team.highlight_3;
+    topLeftLink3.innerHTML = "Show highlight 3";
 
-    const teamPageTopRight = document.createElement('div')
-    teamPageTopRight.classList.add('team-page-top-right')
+    topLeftLinks.append(topLeftLink1);
+    topLeftLinks.append(topLeftLink2);
+    topLeftLinks.append(topLeftLink3);
 
-    const topRightParagraph = document.createElement('p')
-    topRightParagraph.classList.add('team-page-description')
-    topRightParagraph.innerHTML = team.description
-    teamPageTopRight.append(topRightParagraph)
-    teamPageTop.append(teamPageTopRight)
-    mainWrapDiv.append(teamPageTop)
+    teamPageTopLeft.append(topLeftImg);
+    teamPageTopLeft.append(topLeftHeader);
+    teamPageTopLeft.append(topLeftLinks);
 
-    const teamPageBottom = document.createElement('div')
-    teamPageBottom.classList.add('team-page-bottom')
+    teamPageTop.append(teamPageTopLeft);
+
+    const teamPageTopRight = document.createElement("div");
+    teamPageTopRight.classList.add("team-page-top-right");
+
+    const topRightParagraph = document.createElement("p");
+    topRightParagraph.classList.add("team-page-description");
+    topRightParagraph.innerHTML = team.description;
+    teamPageTopRight.append(topRightParagraph);
+    teamPageTop.append(teamPageTopRight);
+    mainWrapDiv.append(teamPageTop);
+
+    const teamPageBottom = document.createElement("div");
+    teamPageBottom.classList.add("team-page-bottom");
 
     for (const player of team.players) {
-      const teamPageBottomPlayer = document.createElement('div')
-      teamPageBottomPlayer.classList.add('team-page-bottom-player')
+      const teamPageBottomPlayer = document.createElement("div");
+      teamPageBottomPlayer.classList.add("team-page-bottom-player");
 
-      const bottomPlayerImg = document.createElement('img')
-      bottomPlayerImg.classList.add('team-page-bottom-player-image')
-      bottomPlayerImg.src = player.player_image
-      bottomPlayerImg.alt = player.player_name + ' headshot'
+      const bottomPlayerImg = document.createElement("img");
+      bottomPlayerImg.classList.add("team-page-bottom-player-image");
+      bottomPlayerImg.src = player.player_image;
+      bottomPlayerImg.alt = player.player_name + " headshot";
 
-      const bottomPlayerHeight = document.createElement('p')
-      bottomPlayerHeight.classList.add('team-page-bottom-player-stats')
-      bottomPlayerHeight.innerHTML = player.height
+      const bottomPlayerHeight = document.createElement("p");
+      bottomPlayerHeight.classList.add("team-page-bottom-player-stats");
+      bottomPlayerHeight.innerHTML = player.height;
 
-      const bottomPlayerPPG = document.createElement('p')
-      bottomPlayerPPG.classList.add('team-page-bottom-player-stats')
-      bottomPlayerPPG.innerHTML = player.best_ppg
+      const bottomPlayerPPG = document.createElement("p");
+      bottomPlayerPPG.classList.add("team-page-bottom-player-stats");
+      bottomPlayerPPG.innerHTML = player.best_ppg;
 
-      const bottomPlayerFreethrow = document.createElement('p')
-      bottomPlayerFreethrow.classList.add('team-page-bottom-player-stats')
-      bottomPlayerFreethrow.innerHTML = player.freethrow_percentage
+      const bottomPlayerFreethrow = document.createElement("p");
+      bottomPlayerFreethrow.classList.add("team-page-bottom-player-stats");
+      bottomPlayerFreethrow.innerHTML = player.freethrow_percentage;
 
-      teamPageBottomPlayer.append(bottomPlayerImg)
-      teamPageBottomPlayer.append(bottomPlayerHeight)
-      teamPageBottomPlayer.append(bottomPlayerPPG)
-      teamPageBottomPlayer.append(bottomPlayerFreethrow)
+      teamPageBottomPlayer.append(bottomPlayerImg);
+      teamPageBottomPlayer.append(bottomPlayerHeight);
+      teamPageBottomPlayer.append(bottomPlayerPPG);
+      teamPageBottomPlayer.append(bottomPlayerFreethrow);
 
-      teamPageBottom.append(teamPageBottomPlayer)
-      }
-    mainWrapDiv.append(teamPageBottom)
-    parentDiv.append(mainWrapDiv)
+      teamPageBottom.append(teamPageBottomPlayer);
+    }
+    mainWrapDiv.append(teamPageBottom);
+    parentDiv.append(mainWrapDiv);
   }
 }
 
-loadTeams()
-loadTeamPages()
-
+loadTeams();
+loadTeamPages();
