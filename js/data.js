@@ -64,7 +64,7 @@ const teamsSetup = {
       team_name: "Golden State Warriors",
       description:
         "The Golden State Warriors are a franchise known for its shooting, pace, and modern dynasty, redefining how basketball is played through elite spacing, relentless ball movement, and record-breaking three-point shooting. Their rise began with the emergence of Stephen Curry, whose shooting range restructured defensive strategy league-wide, supported by Klay Thompson’s sharpshooting and Draymond Green’s versatility. Under Steve Kerr, the Warriors built a system focused on speed, off-ball movement, and unselfish play, leading to multiple championships and one of the most dominant stretches in NBA history. Their impact goes far beyond wins: they altered the league’s offensive philosophy, influenced how teams are built, and cemented themselves as one of the defining teams of the modern era.",
-      added_to_ball_of_fame: "2025-11-18T00:00:00.000Z",
+      added_to_ball_of_fame: "2025-11-17T00:00:00.000Z",
       highlight_1:
         "https://www.youtube.com/embed/aAXSoKRrHXs?si=hhL_sUxGPyDgc7Bt",
       highlight_2:
@@ -121,7 +121,7 @@ const teamsSetup = {
       team_name: "Chicago Bulls",
       description:
         "The Chicago Bulls are legendary for their 90s dominance and Michael Jordan’s era, a period that transformed the franchise into a global phenomenon and set a standard for excellence in professional basketball. With Jordan’s unmatched scoring and competitive drive, Scottie Pippen’s elite two-way play, and Phil Jackson’s triangle offense, the Bulls secured six championships in eight years and became the defining team of the decade. Their style, star power, and cultural impact extended far beyond the court, influencing fashion, media, and international interest in the NBA. Even after the dynasty years, the Bulls’ identity remains tied to that historic run, standing as one of the league’s most iconic and influential franchises.",
-      added_to_ball_of_fame: "2025-11-17T00:00:00.000Z",
+      added_to_ball_of_fame: "2025-11-18T00:00:00.000Z",
       highlight_1:
         "https://www.youtube.com/embed/oX6J8gDfzlg?si=c7iVyJ5cuh0BOmNY",
       highlight_2:
@@ -283,8 +283,6 @@ function search(searchList, searchTerm) {
   }
 }
 
-// fix load teams and load team pages, it needs to get some sort of array of objects or json, and then use it to build the page
-// load teams also needs to work in a way where it can be sorted
 function loadTeams() {
   const parentDiv = document.getElementById('teamSection')
   parentDiv.innerHTML = ''
@@ -299,7 +297,7 @@ function loadTeams() {
 
     const teamImage = document.createElement("img")
     teamImage.classList.add("team-section-image")
-    teamImage.src = team.team_image;
+    teamImage.src = team.team_image
     teamImage.alt = team.team_name + " logo"
 
     teamLogoDiv.append(teamImage)
@@ -343,150 +341,102 @@ function loadTeams() {
 }
 
 function loadTeamPages() {
-    const parentDiv = document.getElementById('teamPages')
-    parentDiv.innerHTML = ''
-    for (const team of teams.teams) {
-        const mainWrapDiv = document.createElement('div')
-        mainWrapDiv.classList.add('addteam-page')
-        mainWrapDiv.classList.add('hidden')
-        mainWrapDiv.id = team.ID
+  const parentDiv = document.getElementById('teamPages')
+  parentDiv.innerHTML = ''
+  for (const team of teams.teams) {
+    const mainWrapDiv = document.createElement('div')
+    mainWrapDiv.classList.add('addteam-page')
+    mainWrapDiv.classList.add('hidden')
+    mainWrapDiv.id = team.ID
 
-        const teamPageTop = document.createElement('div')
-        teamPageTop.classList.add('team-page-top')
+    const teamPageTop = document.createElement('div')
+    teamPageTop.classList.add('team-page-top')
 
-        const teamPageTopLeft = document.createElement('div')
-        teamPageTopLeft.classList.add('team-page-top-left')
+    const teamPageTopLeft = document.createElement('div')
+    teamPageTopLeft.classList.add('team-page-top-left')
 
-        const topLeftImg = document.createElement('img')
-        topLeftImg.src = team.team_image
-        topLeftImg.alt = team.team_name + ' logo'
+    const topLeftImg = document.createElement('img')
+    topLeftImg.src = team.team_image
+    topLeftImg.alt = team.team_name + ' logo'
 
-        const topLeftHeader = document.createElement('h3')
-        topLeftHeader.classList.add('team-page-link-title')
-        topLeftHeader.innerHTML = 'Highlights'
+    const topLeftHeader = document.createElement('h3')
+    topLeftHeader.classList.add('team-page-link-title')
+    topLeftHeader.innerHTML = 'Highlights'
 
-        const topLeftLinks = document.createElement('div')
-        topLeftLinks.classList.add('team-page-links')
+    const topLeftLinks = document.createElement('div')
+    topLeftLinks.classList.add('team-page-links')
 
-        const topLeftLink1 = document.createElement('button')
-        topLeftLink1.classList.add('team-page-highlight')
-        topLeftLink1.value = team.highlight_1
-        topLeftLink1.innerHTML = 'Show highlight 1'
+    const topLeftLink1 = document.createElement('button')
+    topLeftLink1.classList.add('team-page-highlight')
+    topLeftLink1.value = team.highlight_1
+    topLeftLink1.innerHTML = 'Show highlight 1'
         
-        const topLeftLink2 = document.createElement('button')
-        topLeftLink2.classList.add('team-page-highlight')
-        topLeftLink2.value = team.highlight_2
-        topLeftLink2.innerHTML = 'Show highlight 2'
+    const topLeftLink2 = document.createElement('button')
+    topLeftLink2.classList.add('team-page-highlight')
+    topLeftLink2.value = team.highlight_2
+    topLeftLink2.innerHTML = 'Show highlight 2'
         
-        const topLeftLink3 = document.createElement('button')
-        topLeftLink3.classList.add('team-page-highlight')
-        topLeftLink3.value = team.highlight_3
-        topLeftLink3.innerHTML = 'Show highlight 3'
+    const topLeftLink3 = document.createElement('button')
+    topLeftLink3.classList.add('team-page-highlight')
+    topLeftLink3.value = team.highlight_3
+    topLeftLink3.innerHTML = 'Show highlight 3'
         
-        topLeftLinks.append(topLeftLink1)
-        topLeftLinks.append(topLeftLink2)
-        topLeftLinks.append(topLeftLink3)
+    topLeftLinks.append(topLeftLink1)
+    topLeftLinks.append(topLeftLink2)
+    topLeftLinks.append(topLeftLink3)
 
-        teamPageTopLeft.append(topLeftImg)
-        teamPageTopLeft.append(topLeftHeader)
-        teamPageTopLeft.append(topLeftLinks)
+    teamPageTopLeft.append(topLeftImg)
+    teamPageTopLeft.append(topLeftHeader)
+    teamPageTopLeft.append(topLeftLinks)
 
-        teamPageTop.append(teamPageTopLeft)
+    teamPageTop.append(teamPageTopLeft)
 
-        const teamPageTopRight = document.createElement('div')
-        teamPageTopRight.classList.add('team-page-top-right')
+    const teamPageTopRight = document.createElement('div')
+    teamPageTopRight.classList.add('team-page-top-right')
 
-        const topRightParagraph = document.createElement('p')
-        topRightParagraph.classList.add('team-page-description')
-        topRightParagraph.innerHTML = team.description
-        teamPageTopRight.append(topRightParagraph)
-        teamPageTop.append(teamPageTopRight)
-        mainWrapDiv.append(teamPageTop)
+    const topRightParagraph = document.createElement('p')
+    topRightParagraph.classList.add('team-page-description')
+    topRightParagraph.innerHTML = team.description
+    teamPageTopRight.append(topRightParagraph)
+    teamPageTop.append(teamPageTopRight)
+    mainWrapDiv.append(teamPageTop)
 
-        const teamPageBottom = document.createElement('div')
-        teamPageBottom.classList.add('team-page-bottom')
+    const teamPageBottom = document.createElement('div')
+    teamPageBottom.classList.add('team-page-bottom')
 
-        for (const player of team.players) {
-            const teamPageBottomPlayer = document.createElement('div')
-            teamPageBottomPlayer.classList.add('team-page-bottom-player')
+    for (const player of team.players) {
+      const teamPageBottomPlayer = document.createElement('div')
+      teamPageBottomPlayer.classList.add('team-page-bottom-player')
 
-            const bottomPlayerImg = document.createElement('img')
-            bottomPlayerImg.classList.add('team-page-bottom-player-image')
-            bottomPlayerImg.src = player.player_image
-            bottomPlayerImg.alt = player.player_name + ' headshot'
+      const bottomPlayerImg = document.createElement('img')
+      bottomPlayerImg.classList.add('team-page-bottom-player-image')
+      bottomPlayerImg.src = player.player_image
+      bottomPlayerImg.alt = player.player_name + ' headshot'
 
-            const bottomPlayerHeight = document.createElement('p')
-            bottomPlayerHeight.classList.add('team-page-bottom-player-stats')
-            bottomPlayerHeight.innerHTML = player.height
+      const bottomPlayerHeight = document.createElement('p')
+      bottomPlayerHeight.classList.add('team-page-bottom-player-stats')
+      bottomPlayerHeight.innerHTML = player.height
 
-            const bottomPlayerPPG = document.createElement('p')
-            bottomPlayerPPG.classList.add('team-page-bottom-player-stats')
-            bottomPlayerPPG.innerHTML = player.best_ppg
+      const bottomPlayerPPG = document.createElement('p')
+      bottomPlayerPPG.classList.add('team-page-bottom-player-stats')
+      bottomPlayerPPG.innerHTML = player.best_ppg
 
-            const bottomPlayerFreethrow = document.createElement('p')
-            bottomPlayerFreethrow.classList.add('team-page-bottom-player-stats')
-            bottomPlayerFreethrow.innerHTML = player.freethrow_percentage
+      const bottomPlayerFreethrow = document.createElement('p')
+      bottomPlayerFreethrow.classList.add('team-page-bottom-player-stats')
+      bottomPlayerFreethrow.innerHTML = player.freethrow_percentage
 
-            teamPageBottomPlayer.append(bottomPlayerImg)
-            teamPageBottomPlayer.append(bottomPlayerHeight)
-            teamPageBottomPlayer.append(bottomPlayerPPG)
-            teamPageBottomPlayer.append(bottomPlayerFreethrow)
+      teamPageBottomPlayer.append(bottomPlayerImg)
+      teamPageBottomPlayer.append(bottomPlayerHeight)
+      teamPageBottomPlayer.append(bottomPlayerPPG)
+      teamPageBottomPlayer.append(bottomPlayerFreethrow)
 
-            teamPageBottom.append(teamPageBottomPlayer)
-        }
-        mainWrapDiv.append(teamPageBottom)
-        parentDiv.append(mainWrapDiv)
-    }
-}
-
-function isValidYouTubeEmbedLink(link) {
-  if (!link.trim()) return false;
-  const youtubeEmbedRegex =
-    /^https:\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9_-]{11}$/;
-  return youtubeEmbedRegex.test(link.trim());
-}
-
-document.getElementById("teamForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    console.log("Form submitted - validating YouTube links...");
-
-    const youtubeErrors = [
-      "highlight1Error",
-      "highlight2Error",
-      "highlight3Error",
-    ];
-    youtubeErrors.forEach((id) => {
-      document.getElementById(id).textContent = "";
-    });
-
-    let isValid = true;
-
-    const youtubeInputs = document.querySelectorAll(".form-hightlight-input");
-    youtubeInputs.forEach((input, index) => {
-      const errorElement = document.getElementById(
-        `highlight${index + 1}Error`
-      );
-      const link = input.value.trim();
-
-      if (!link) {
-        errorElement.textContent = "YouTube embed link is required";
-        isValid = false;
-      } else if (!isValidYouTubeEmbedLink(link)) {
-        errorElement.textContent = "Must be YouTube embed link format";
-        isValid = false;
+      teamPageBottom.append(teamPageBottomPlayer)
       }
-    });
-
-    if (isValid) {
-      console.log("All YouTube links valid - proceeding with save");
-      if (typeof saveTeamData === "function") {
-        saveTeamData();
-      }
-    } else {
-      console.log("YouTube validation failed");
-    }
-});
+    mainWrapDiv.append(teamPageBottom)
+    parentDiv.append(mainWrapDiv)
+  }
+}
 
 loadTeams()
 loadTeamPages()
+
