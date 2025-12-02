@@ -45,8 +45,58 @@ h1.title {
 
 .team-section-box {
   display: flex;
-  flex-flow: row, nowrap;
+  flex-flow: row nowrap;
 }
 .team-section-side img {
   height: 184px;
+}
+img.team-section-image {
+  border: 1px;
+
+  border-radius: 80px;
+}
+.team-section-middle-top {
+  border: 5px solid blue;
+  border-radius: 25px;
+  margin-right: 90px;
+  background-color: rgba(210, 201, 248, 0.5);
+}
+
+.team-section-middle-bottom {
+  border: 5px solid red;
+  border-radius: 25px;
+  margin-left: 90px;
+  background-color: rgba(247, 164, 164, 0.5);
+}
+
+.teamadd {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.team-form-section {
+  text-align: center;
+  flex-flow: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border: 10px solid black;
+  border-radius: 25px;
+}
+
+.form-team-name-label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
 }

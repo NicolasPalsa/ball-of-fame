@@ -10,6 +10,7 @@
 
     <script src="/js/data.js" defer></script>
     <script src="/js/modal.js" defer></script>
+    <script src="js/form.js" defer></script>
   </head>
 
   <body class="body">
@@ -65,7 +66,7 @@
 
     <!-- Add team button, brings a new div into view, which has a form in it,
       disappears when form is up, reappears when form is submitted -->
-    <button class="team add" id="addTeam">Add team</button>
+    <button class="teamadd" id="addTeam">Add team</button>
 
     <!-- Form for adding teams -->
     <div class="team-form-section hidden">
@@ -411,9 +412,10 @@
           </div>
         </div>
 
-        <!-- the submits form, checks if for example bro if everything is filled in correctly,
-      then saves info into the localStorage which is a good thing, hides itself and shows the add team button -->
-        <button class="team submit" type="submit">Submit</button>
+        <!-- submit form button -->
+        <button class="team submit" type="submit" id="submitTeam">
+          Submit
+        </button>
       </form>
     </div>
 
