@@ -1,118 +1,89 @@
 <!DOCTYPE html>
 <html lang="fi">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ball Of Fame</title>
-    <link rel="stylesheet" href="/css/layout.css" />
-    <link rel="stylesheet" href="/css/modal.css" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
     <script src="/js/data.js" defer></script>
     <script src="/js/modal.js" defer></script>
     <script src="js/form.js" defer></script>
+    <script src="js/search.js" defer></script>
   </head>
 
   <body class="body">
     <!-- Title and logo -->
-    <div class="header">
+    <div class="header" id="header">
       <h1 class="title">BALL OF FAME</h1>
-      <img class="logo" src="/images/bff.png" />
+      <img class="logo" src="/images/bff.png">
     </div>
 
-    <!-- Search bar and result box -->
-    <div class="search-bar">
-      <input
-        class="search-input"
-        id="search"
-        type="text"
-        placeholder="Search team or player"
-      />
-      <div class="search-results" id="result"></div>
-      <!--style so it fits 3 results and is always the same size-->
-    </div>
-
-    <!--- Team and top player, and the template --->
-    <div class="team-section" id="teamSection">
-      <!--TEMPLATE starts-->
-      <div class="team-section-box">
-        <div class="team-section-side team-logo">
-          <img
-            class="team-section-image"
-            src="/images/placeholder.png"
-            alt=""
-          />
-        </div>
-
-        <div class="team-section-middle">
-          <div class="team-section-middle top">
-            <h2>TEAM TITLE</h2>
-          </div>
-          <div class="team-section-middle bottom">
-            <h2>TOP PLAYER</h2>
-          </div>
-        </div>
-
-        <div class="team-section-side top-player">
-          <img
-            class="team-section-image"
-            src="/images/placeholder.png"
-            alt=""
-          />
-        </div>
+    <div id="everythingWrap">
+      <!-- Search bar and result box -->
+      <div class="search-bar">
+        <input class="search-input" id="search" type="text" placeholder="Search team or player">
+        <div class="search-results" id="result"></div>
+        <!--style so it fits 3 results and is always the same size-->
       </div>
-      <!--TEMPLATE ENDS-->
-    </div>
 
-    <!-- Add team button, brings a new div into view, which has a form in it,
-      disappears when form is up, reappears when form is submitted -->
-    <button class="teamadd" id="addTeam">Add team</button>
+      <!--- Team and top player, and the template --->
+      <div class="team-section" id="teamSection">
+        <!--TEMPLATE starts-->
+        <div class="team-section-box">
+          <div class="team-section-side team-logo">
+            <img class="team-section-image" src="/images/placeholder.png" alt="">
+          </div>
 
-    <!-- Form for adding teams -->
-    <div class="team-form-section hidden">
-      <h2 class="team-form-title">Add team form</h2>
-      <form class="team-form" id="teamForm">
-        <div>
-          <img src="" alt="" />
-          <div>
-            <div>
-              <label class="form-team-name-label">Name of team: </label>
-              <input class="form-team-input-name" type="text" required />
-              <span class="error-message" id="teamNameError"></span>
+          <div class="team-section-middle">
+            <div class="team-section-middle top">
+              <h2>TEAM TITLE</h2>
             </div>
-            <div>
-              <label class="form-team-description-label"
-                >Description of team:
-              </label>
-              <input class="form-team-input-description" type="text" required />
-              <span class="error-message" id="teamDescError"></span>
+            <div class="team-section-middle bottom">
+              <h2>TOP PLAYER</h2>
             </div>
           </div>
-        </div>
 
-        <div class="highlights">
-          <input
-            class="form-hightlight-input"
-            type="text"
-            placeholder="Insert YouTube embed link"
-            required
-          />
-          <span class="error-message" id="highlight1Error"></span>
-          <input
-            class="form-hightlight-input"
-            type="text"
-            placeholder="Insert YouTube embed link"
-            required
-          />
-          <span class="error-message" id="highlight2Error"></span>
-          <input
-            class="form-hightlight-input"
-            type="text"
-            placeholder="Insert YouTube embed link"
-            required
-          />
-          <span class="error-message" id="highlight3Error"></span>
+          <div class="team-section-side top-player">
+            <img class="team-section-image" src="/images/placeholder.png" alt="">
+          </div>
         </div>
+        <!--TEMPLATE ENDS-->
+      </div>
+
+      <!-- Add team button, brings a new div into view, which has a form in it,
+        disappears when form is up, reappears when form is submitted -->
+      <button class="teamadd" id="addTeam">Add team</button>
+
+      <!-- Form for adding teams -->
+      <div class="team-form-section hidden">
+        <h2 class="team-form-title">Add team form</h2>
+        <form class="team-form" id="teamForm">
+          <div>
+            <img src="images/placeholder.png" alt="team image will show here"> <!--source will grab the url from form-team-input-image -->
+            <div>
+              <div>
+                <label class="form-team-name-label">Name of team: </label>
+                <input class="form-team-input-name" type="text" required>
+                <span class="error-message" id="teamNameError"></span>
+              </div>
+              <div>
+                <label class="form-team-description-label">Description of team:</label>
+                <input class="form-team-input-description" type="text" required>
+                <span class="error-message" id="teamDescError"></span>
+              </div>
+              <div>
+                <label class="form-team-image-label">Link image of team: </label>
+                <input class="form-team-input-image" type="text" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlights">
+            <input class="form-hightlight-input" type="text" placeholder="Insert YouTube embed link" required>
+            <span class="error-message" id="highlight1Error"></span>
 
         <!-- Player adding section -->
         <div class="player-divs">
@@ -514,7 +485,7 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <iframe id="video" width="840" height="630" src=""> </iframe>
+        <iframe id="video" width="840" height="630" src=""></iframe>
       </div>
     </div>
 
