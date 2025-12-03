@@ -28,28 +28,28 @@ document.getElementById("teamForm").addEventListener("submit", function (event) 
     })
     let isValid = true
 
-    const youtubeInputs = document.querySelectorAll(".form-hightlight-input");
+    const youtubeInputs = document.querySelectorAll(".form-hightlight-input")
     youtubeInputs.forEach((input, index) => {
       const errorElement = document.getElementById(
         `highlight${index + 1}Error`
-      );
-      const link = input.value.trim();
+      )
+      const link = input.value.trim()
 
       if (!link) {
-        errorElement.textContent = "YouTube embed link is required";
-        isValid = false;
+        errorElement.textContent = "YouTube embed link is required"
+        isValid = false
       } else if (!isValidYouTubeEmbedLink(link)) {
-        errorElement.textContent = "Must be YouTube embed link format";
-        isValid = false;
+        errorElement.textContent = "Must be YouTube embed link format"
+        isValid = false
       }
-    });
+    })
 
     if (isValid) {
-      console.log("All YouTube links valid - proceeding with save");
+      console.log("All YouTube links valid - proceeding with save")
       if (typeof saveTeamData === "function") {
-        saveTeamData();
+        saveTeamData()
       }
     } else {
-      console.log("YouTube validation failed");
+      console.log("YouTube validation failed")
     }
-});
+})
