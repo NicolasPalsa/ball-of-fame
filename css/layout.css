@@ -1,5 +1,6 @@
 body {
-  margin: 90px;
+  margin-right: 90px;
+  margin-left: 90px;
 }
 h1.title {
   text-align: center;
@@ -46,6 +47,8 @@ h1.title {
 .team-section-box {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
+  text-align: center;
 }
 .team-section-side img {
   height: 184px;
@@ -99,4 +102,13 @@ img.team-section-image {
 
 .hidden {
   display: none;
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 14px;
+  text-align: center;
 }
