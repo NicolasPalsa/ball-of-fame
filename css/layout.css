@@ -92,10 +92,28 @@ img.team-section-image {
   border-radius: 25px;
 }
 
-.form-team-name-label {
-  font-size: 18px;
-  margin-right: 10px;
+input.form-team-input-name {
+  margin: 10px;
+  padding: 10px;
+  width: 500px;
+  border: 1px solid #555;
+  border-radius: 25px;
+}
 
-.hidden {
-  display: none;
+.form-team-input-description {
+  margin: 10px;
+  padding: 10px;
+  width: 700px;
+  height: 300px;
+  border: 1px solid #555;
+  border-radius: 25px;
+}
+
+.form-highlight-input {
+  margin: 10px;
+  padding: 10px;
+  width: 700px;
+  height: 150px;
+  border: 1px solid #555;
+  border-radius: 25px;
 }
