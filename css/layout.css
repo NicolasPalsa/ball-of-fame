@@ -1,10 +1,22 @@
 body {
   margin: 90px;
 }
+
+img {
+  user-select: none;
+}
+
+#header {
+  cursor:
+    url("cursor_2.png") 2 2,
+    pointer;
+}
+
 h1.title {
   text-align: center;
   text-decoration: underline;
 }
+
 .logo {
   display: block;
   margin-left: auto;
