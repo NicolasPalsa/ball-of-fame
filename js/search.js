@@ -72,6 +72,7 @@ function navigateToTeamPage(id) {
     if (teamPage.id === id) {
       teamPage.classList.remove('hidden')
       document.getElementById('everythingWrap').classList.add('hidden')
+      document.getElementById('logo').src = '/images/bof.png'
       window.scrollTo({ top: 0, behavior: 'smooth'}) // ChatGPT code snippet, it looked weird when clicking on a team because it opened at the bottom of the page
     } else {
       teamPage.classList.add('hidden')
