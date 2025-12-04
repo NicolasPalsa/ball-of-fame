@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
     <!-- Title and logo -->
     <div class="header" id="header">
       <h1 class="title">BALL OF FAME</h1>
-      <img class="logo" src="/images/bff.png">
+      <img class="logo" src="/images/bff.png" alt="ball of fame logo">
     </div>
 
     <div id="everythingWrap">
@@ -29,7 +29,7 @@
         <!--style so it fits 3 results and is always the same size-->
       </div>
 
-      <!--- Team and top player, and the template --->
+      <!-- Team and top player, and the template -->
       <div class="team-section" id="teamSection">
         <!--TEMPLATE starts-->
         <div class="team-section-box">
@@ -83,339 +83,209 @@
 
           <div class="highlights">
             <input class="form-hightlight-input" type="text" placeholder="Insert YouTube embed link" required>
+            <input class="form-hightlight-input" type="text" placeholder="Insert YouTube embed link" required>
+            <input class="form-hightlight-input" type="text" placeholder="Insert YouTube embed link" required>
             <span class="error-message" id="highlight1Error"></span>
+          </div>
 
-        <!-- Player adding section -->
-        <div class="player-divs">
-          <!-- Player 1 -->
-          <div class="player">
-            <div>
-              <img src="" alt="" />
-            </div>
-            <div class="player-input-box">
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Name of player</label>
-                  <input
-                    class="player-input player-name"
-                    placeholder="Name of player"
-                    type="text"
-                    required
-                  />
-                  <span class="error-message" id="player1NameError"></span>
+          <!-- Player adding section -->
+          <div class="player-divs">
+            <!-- Player 1 -->
+            <div class="player">
+              <div>
+                <img src="/images/placeholder.png" alt="">
+                <label class="player-label">Image of player</label>
+                <input class="player-input player-image" placeholder="Image link of player" type="text" required>
+                <span class="error-message" id="player1ImageError"></span>
+              </div>
+              <div class="player-input-box">
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Name of player</label>
+                    <input class="player-input player-name" placeholder="Name of player" type="text" required>
+                    <span class="error-message" id="player1NameError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Height of player (cm)</label>
+                    <input class="player-input player-height" placeholder="player height" type="number" min="150" max="250" required>
+                    <span class="error-message" id="player1HeightError"></span>
+                  </div>
                 </div>
-                <div class="player-input-wrap">
-                  <label class="player-label">Height of player (cm)</label>
-                  <input
-                    class="player-input player-height"
-                    placeholder="player height"
-                    type="number"
-                    min="150"
-                    max="250"
-                    required
-                  />
-                  <span class="error-message" id="player1HeightError"></span>
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Points Per Game of player</label>
+                    <input class="player-input player-ppg" placeholder="points per game" type="number" step="0.1" min="0" max="50" required>
+                    <span class="error-message" id="player1PpgError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Freethrow percentage of player</label>
+                    <input class="player-input player-ft" placeholder=" Freethrow percentage" type="number" step="0.1" min="0" max="100" required>
+                    <span class="error-message" id="player1FtError"></span>
+                  </div>
                 </div>
               </div>
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Points Per Game of player</label>
-                  <input
-                    class="player-input player-ppg"
-                    placeholder="points per game"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="50"
-                    required
-                  />
-                  <span class="error-message" id="player1PpgError"></span>
+            </div>
+
+            <!-- Player 2 -->
+            <div class="player">
+              <div>
+                <img src="/images/placeholder.png" alt="">
+                <label class="player-label">Image of player</label>
+                <input class="player-input player-image" placeholder="Image link of player" type="text" required>
+                <span class="error-message" id="player2ImageError"></span>
+              </div>
+              <div class="player-input-box">
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Name of player</label>
+                    <input class="player-input player-name" placeholder="Name of player" type="text" required>
+                    <span class="error-message" id="player2NameError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Height of player (cm)</label>
+                    <input class="player-input player-height" placeholder="player height" type="number" min="150" max="250" required>
+                    <span class="error-message" id="player2HeightError"></span>
+                  </div>
                 </div>
-                <div class="player-input-wrap">
-                  <label class="player-label"
-                    >Freethrow percentage of player</label
-                  >
-                  <input
-                    class="player-input player-ft"
-                    placeholder=" Freethrow percentage"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="100"
-                    required
-                  />
-                  <span class="error-message" id="player1FtError"></span>
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Points Per Game of player</label>
+                    <input class="player-input player-ppg" placeholder="points per game" type="number" step="0.1" min="0" max="50" required>
+                    <span class="error-message" id="player2PpgError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Freethrow percentage of player</label>
+                    <input class="player-input player-ft" placeholder=" Freethrow percentage" type="number" step="0.1" min="0" max="100" required>
+                    <span class="error-message" id="player2FtError"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Player 3 -->
+            <div class="player">
+              <div>
+                <img src="/images/placeholder.png" alt="">
+                <label class="player-label">Image of player</label>
+                <input class="player-input player-image" placeholder="Image link of player" type="text" required>
+                <span class="error-message" id="player3ImageError"></span>
+              </div>
+              <div class="player-input-box">
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Name of player</label>
+                    <input class="player-input player-name" placeholder="Name of player" type="text" required>
+                    <span class="error-message" id="player3NameError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Height of player (cm)</label>
+                    <input class="player-input player-height" placeholder="player height" type="number" min="150" max="250" required>
+                    <span class="error-message" id="player3HeightError"></span>
+                  </div>
+                </div>
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Points Per Game of player</label>
+                    <input class="player-input player-ppg" placeholder="points per game" type="number" step="0.1" min="0" max="50" required>
+                    <span class="error-message" id="player3PpgError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Freethrow percentage of player</label>
+                    <input class="player-input player-ft" placeholder=" Freethrow percentage" type="number" step="0.1" min="0" max="100" required>
+                    <span class="error-message" id="player3FtError"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Player 4 -->
+            <div class="player">
+              <div>
+                <img src="/images/placeholder.png" alt="">
+                <label class="player-label">Image of player</label>
+                <input class="player-input player-image" placeholder="Image link of player" type="text" required>
+                <span class="error-message" id="player4ImageError"></span>
+              </div>
+              <div class="player-input-box">
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Name of player</label>
+                    <input class="player-input player-name" placeholder="Name of player" type="text" required>
+                    <span class="error-message" id="player4NameError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Height of player (cm)</label>
+                    <input class="player-input player-height" placeholder="player height" type="number" min="150" max="250" required>
+                    <span class="error-message" id="player4HeightError"></span>
+                  </div>
+                </div>
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Points Per Game of player</label>
+                    <input class="player-input player-ppg" placeholder="points per game" type="number" step="0.1" min="0" max="50" required>
+                    <span class="error-message" id="player4PpgError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Freethrow percentage of player</label>
+                    <input class="player-input player-ft" placeholder=" Freethrow percentage" type="number" step="0.1" min="0" max="100" required>
+                    <span class="error-message" id="player4FtError"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Player 5 -->
+            <div class="player">
+              <div>
+                <img src="/images/placeholder.png" alt="">
+                <label class="player-label">Image of player</label>
+                <input class="player-input player-image" placeholder="Image link of player" type="text" required>
+                <span class="error-message" id="player5ImageError"></span>
+              </div>
+              <div class="player-input-box">
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Name of player</label>
+                    <input class="player-input player-name" placeholder="Name of player" type="text" required>
+                    <span class="error-message" id="player5NameError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Height of player (cm)</label>
+                    <input class="player-input player-height" placeholder="player height" type="number" min="150" max="250" required>
+                    <span class="error-message" id="player5HeightError"></span>
+                  </div>
+                </div>
+                <div class="player-input-row">
+                  <div class="player-input-wrap">
+                    <label class="player-label">Points Per Game of player</label>
+                    <input class="player-input player-ppg" placeholder="points per game" type="number" step="0.1" min="0" max="50" required>
+                    <span class="error-message" id="player5PpgError"></span>
+                  </div>
+                  <div class="player-input-wrap">
+                    <label class="player-label">Freethrow percentage of player</label>
+                    <input class="player-input player-ft" placeholder=" Freethrow percentage" type="number" step="0.1" min="0" max="100" required>
+                    <span class="error-message" id="player5FtError"></span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Player 2 -->
-          <div class="player">
-            <div>
-              <img src="" alt="" />
-            </div>
-            <div class="player-input-box">
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Name of player</label>
-                  <input
-                    class="player-input player-name"
-                    placeholder="Name of player"
-                    type="text"
-                    required
-                  />
-                  <span class="error-message" id="player2NameError"></span>
-                </div>
-                <div class="player-input-wrap">
-                  <label class="player-label">Height of player (cm)</label>
-                  <input
-                    class="player-input player-height"
-                    placeholder="player height"
-                    type="number"
-                    min="150"
-                    max="250"
-                    required
-                  />
-                  <span class="error-message" id="player2HeightError"></span>
-                </div>
-              </div>
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Points Per Game of player</label>
-                  <input
-                    class="player-input player-ppg"
-                    placeholder="points per game"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="50"
-                    required
-                  />
-                  <span class="error-message" id="player2PpgError"></span>
-                </div>
-                <div class="player-input-wrap">
-                  <label class="player-label"
-                    >Freethrow percentage of player</label
-                  >
-                  <input
-                    class="player-input player-ft"
-                    placeholder=" Freethrow percentage"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="100"
-                    required
-                  />
-                  <span class="error-message" id="player2FtError"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Player 3 -->
-          <div class="player">
-            <div>
-              <img src="" alt="" />
-            </div>
-            <div class="player-input-box">
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Name of player</label>
-                  <input
-                    class="player-input player-name"
-                    placaeholder="Name of player"
-                    type="text"
-                    required
-                  />
-                  <span class="error-message" id="player3NameError"></span>
-                </div>
-                <div class="player-input-wrap">
-                  <label class="player-label">Height of player (cm)</label>
-                  <input
-                    class="player-input player-height"
-                    placeholder="player height"
-                    type="number"
-                    min="150"
-                    max="250"
-                    required
-                  />
-                  <span class="error-message" id="player3HeightError"></span>
-                </div>
-              </div>
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Points Per Game of player</label>
-                  <input
-                    class="player-input player-ppg"
-                    placeholder="points per game"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="50"
-                    required
-                  />
-                  <span class="error-message" id="player3PpgError"></span>
-                </div>
-                <div class="player-input-wrap">
-                  <label class="player-label"
-                    >Freethrow percentage of player</label
-                  >
-                  <input
-                    class="player-input player-ft"
-                    placeholder="Freethrow percentage"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="100"
-                    required
-                  />
-                  <span class="error-message" id="player3FtError"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Player 4 -->
-          <div class="player">
-            <div>
-              <img src="" alt="" />
-            </div>
-            <div class="player-input-box">
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Name of player</label>
-                  <input
-                    class="player-input player-name"
-                    placeholder="Name of player"
-                    type="text"
-                    required
-                  />
-                  <span class="error-message" id="player4NameError"></span>
-                </div>
-                <div class="player-input-wrap">
-                  <label class="player-label">Height of player (cm)</label>
-                  <input
-                    class="player-input player-height"
-                    type="number"
-                    min="150"
-                    max="250"
-                    required
-                  />
-                  <span class="error-message" id="player4HeightError"></span>
-                </div>
-              </div>
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Points Per Game of player</label>
-                  <input
-                    class="player-input player-ppg"
-                    placeholder="points per game"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="50"
-                    required
-                  />
-                  <span class="error-message" id="player4PpgError"></span>
-                </div>
-                <div class="player-input-wrap">
-                  <label class="player-label"
-                    >Freethrow percentage of player</label
-                  >
-                  <input
-                    class="player-input player-ft"
-                    placeholder=" Freethrow percentage"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="100"
-                    required
-                  />
-                  <span class="error-message" id="player4FtError"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Player 5 -->
-          <div class="player">
-            <div>
-              <img src="" alt="" />
-            </div>
-            <div class="player-input-box">
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Name of player</label>
-                  <input
-                    class="player-input player-name"
-                    placeholder="Name of player"
-                    type="text"
-                    required
-                  />
-                  <span class="error-message" id="player5NameError"></span>
-                </div>
-                <div class="player-input-wrap">
-                  <label class="player-label">Height of player (cm)</label>
-                  <input
-                    class="player-input player-height"
-                    placeholder="player height"
-                    type="number"
-                    min="150"
-                    max="250"
-                    required
-                  />
-                  <span class="error-message" id="player5HeightError"></span>
-                </div>
-              </div>
-              <div class="player-input-row">
-                <div class="player-input-wrap">
-                  <label class="player-label">Points Per Game of player</label>
-                  <input
-                    class="player-input player-ppg"
-                    placeholder="points per game"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="50"
-                    required
-                  />
-                  <span class="error-message" id="player5PpgError"></span>
-                </div>
-                <div class="player-input-wrap">
-                  <label class="player-label"
-                    >Freethrow percentage of player</label
-                  >
-                  <input
-                    class="player-input player-ft"
-                    placeholder=" Freethrow percentage"
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="100"
-                    required
-                  />
-                  <span class="error-message" id="player5FtError"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- submit form button -->
-        <button class="team submit" type="submit" id="submitTeam">
-          Submit
-        </button>
-      </form>
+          <!-- submit form button -->
+          <button class="team submit" type="submit" id="submitTeam">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
 
     <div class="team-pages" id="teamPages">
       <div class="team-page hidden" id="templatePage">
         <div class="team-page-top">
           <div class="team-page-top-left">
-            <img src="" alt="" />
+            <img src="/images/placeholder.png" alt="">
             <!--team logo-->
-            <h3 class="team-page-link-title"></h3>
+            <h3 class="team-page-link-title">title</h3>
             <div class="team-page-links">
               <!--highlight links-->
               <button class="team-page-highlight" value="">
@@ -447,31 +317,31 @@
 
         <div class="team-page-bottom">
           <div class="team-page-bottom-player">
-            <img src="" alt="player_name + ' headshot'" />
+            <img src="/images/placeholder.png" alt="player_name + ' headshot'">
             <p>Height (cm)</p>
             <p>PPG: 27</p>
             <p>Freethrow %: 40%</p>
           </div>
           <div class="team-page-bottom-player">
-            <img src="" alt="player_name + ' headshot'" />
+            <img src="/images/placeholder.png" alt="player_name + ' headshot'">
             <p>Height (cm)</p>
             <p>PPG: 27</p>
             <p>Freethrow %: 40%</p>
           </div>
           <div class="team-page-bottom-player">
-            <img src="" alt="player_name + ' headshot'" />
+            <img src="/images/placeholder.png" alt="player_name + ' headshot'">
             <p>Height (cm)</p>
             <p>PPG: 27</p>
             <p>Freethrow %: 40%</p>
           </div>
           <div class="team-page-bottom-player">
-            <img src="" alt="player_name + ' headshot'" />
+            <img src="/images/placeholder.png" alt="player_name + ' headshot'">
             <p>Height (cm)</p>
             <p>PPG: 27</p>
             <p>Freethrow %: 40%</p>
           </div>
           <div class="team-page-bottom-player">
-            <img src="" alt="player_name + ' headshot'" />
+            <img src="/images/placeholder.png" alt="player_name + ' headshot'">
             <p>Height (cm)</p>
             <p>PPG: 27</p>
             <p>Freethrow %: 40%</p>
@@ -485,7 +355,7 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <iframe id="video" width="840" height="630" src=""></iframe>
+        <iframe id="video" width="840" height="630" src="#"></iframe>
       </div>
     </div>
 

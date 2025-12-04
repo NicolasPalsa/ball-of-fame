@@ -1,5 +1,4 @@
 // search function
-
 document.getElementById("search").addEventListener("input", (e) => {
   const value = document.getElementById("search").value
   results = []
@@ -23,7 +22,7 @@ document.getElementById("search").addEventListener("input", (e) => {
       const p = document.createElement("p")
       p.innerHTML = results[result]
       p.classList.add('search-result')
-      p.value = results[result].toString().replaceAll(" ", "_")
+      p.value = results[result].toString()
       div.append(p)
     }
   }
@@ -31,7 +30,18 @@ document.getElementById("search").addEventListener("input", (e) => {
   // clicking on result function
   document.querySelectorAll('.search-result').forEach(result => {
     result.addEventListener('click', (e) => {
-
+      const value = e.target.value
+      for (team of teams.teams) {
+        if (team.team_name === value) {
+          navigateToTeamPage(team.ID.toString())
+        } else {
+          for (let player of team.players) {
+            if (player.player_name === value) {
+              navigateToTeamPage(team.ID.toString())
+            }
+          }
+        }
+      }
     })
   })
 })
@@ -51,17 +61,20 @@ function search(searchList, searchTerm) {
   }
 }
 
-// clicking on team function
 document.querySelectorAll('.team-section-box').forEach(team => {
-    team.addEventListener('click', () => {
-        document.querySelectorAll('.team-page').forEach(teamPage => {
-            if (teamPage.id === team.id) {
-                teamPage.classList.remove('hidden')
-                document.getElementById('everythingWrap').classList.add('hidden')
-                window.scrollTo({ top: 0, behavior: 'smooth' })
-            } else {
-                teamPage.classList.add('hidden')
-            }
-        })
-    })
+  team.addEventListener('click', () => {
+    navigateToTeamPage(team.id)
+  })
 })
+
+function navigateToTeamPage(id) {
+  document.querySelectorAll('.team-page').forEach(teamPage => {
+    if (teamPage.id === id) {
+      teamPage.classList.remove('hidden')
+      document.getElementById('everythingWrap').classList.add('hidden')
+      window.scrollTo({ top: 0, behavior: 'smooth'}) // ChatGPT code snippet, it looked weird when clicking on a team because it opened at the bottom of the page
+    } else {
+      teamPage.classList.add('hidden')
+    }
+  })
+}

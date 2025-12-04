@@ -28,6 +28,7 @@ h1.title {
   justify-content: center;
   display: flex;
   flex-flow: column;
+  
 }
 
 .search-results .search-input {
@@ -147,4 +148,8 @@ input.form-team-input-name {
   padding: 15px 0;
   font-size: 14px;
   text-align: center;
+}
+
+.search-result {
+  user-select: none;
 }
