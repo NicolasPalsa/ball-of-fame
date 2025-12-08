@@ -1,4 +1,4 @@
-const teams = {
+const teamsSetup = {
   teams: [
     {
       ID: 1,
@@ -229,6 +229,15 @@ const teams = {
       ],
     },
   ],
+}
+let teams = {}
+
+const rawTeams = localStorage.getItem('teams')
+if (rawTeams) {
+  teams = JSON.parse(rawTeams)
+} else {
+  teams = teamsSetup
+  localStorage.setItem("teams", JSON.stringify(teams))
 }
 
 document.getElementById('header').addEventListener('click', () => {location.reload()})
