@@ -232,10 +232,11 @@ input.form-team-input-name {
 }
 
 .team-page-top-left img {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 100%;
   border-radius: 0;
   margin-bottom: 20px;
+  align-self: center;
 }
 .team-page-link-title {
   font-size: 20px;
