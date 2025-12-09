@@ -28,7 +28,6 @@ h1.title {
   justify-content: center;
   display: flex;
   flex-flow: column;
-  
 }
 
 .search-results .search-input {
@@ -149,7 +148,61 @@ input.form-team-input-name {
   font-size: 14px;
   text-align: center;
 }
+.FormTeamIMmage div img {
+  width: 400px;
+  border: 1px;
+  border-radius: 25px;
+  margin-left: auto;
+}
 
-.search-result {
-  user-select: none;
+.player-input {
+  border: 1px solid;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.player-input-box .player-input {
+  height: 60px;
+  font-size: 20px;
+}
+
+.team-form div img {
+  width: 300px;
+  border: 1px;
+  border-radius: 25px;
+}
+
+.player div img {
+  width: 150px;
+  border: 1px;
+  border-radius: 25px;
+  display: flex;
+}
+
+.player {
+  border: 1px solid black;
+  border-radius: 40px;
+  width: 80%;
+  margin: auto;
+  height: 199px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.player-input-box {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+.player-input-row {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+.player-input-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 20px;
+  width: 40%;
 }
