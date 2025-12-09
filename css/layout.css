@@ -205,6 +205,7 @@ input.form-team-input-name {
   flex-flow: column nowrap;
   margin-right: 20px;
   width: 40%;
+}
 .search-result {
   user-select: none;
 }
