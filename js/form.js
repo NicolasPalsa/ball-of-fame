@@ -10,53 +10,27 @@ document.getElementById('addTeam').addEventListener('click', (e) => {
 
 document.getElementById('submitForm').addEventListener('click', (e) => {
   e.preventDefault()
-  validateForm()
+  if (validateForm()) {
+    saveTeamData()
+  }
 })
 
-/* document.getElementById("teamForm").addEventListener("submit", function (e) {
-    e.preventDefault()
-    const youtubeErrors = [
-      "highlight1Error",
-      "highlight2Error",
-      "highlight3Error",
-    ]
-    youtubeErrors.forEach((id) => {
-      document.getElementById(id).textContent = ""
-    })
-    let isValid = true
-
-    const youtubeInputs = document.querySelectorAll(".form-hightlight-input")
-    youtubeInputs.forEach((input, index) => {
-      const errorElement = document.getElementById(
-        `highlight${index + 1}Error`
-      )
-      const link = input.value.trim()
-
-      if (!link) {
-        errorElement.textContent = "YouTube embed link is required"
-        isValid = false
-      } else if (!validateEmbedLink(link)) {
-        errorElement.textContent = "Must be YouTube embed link format"
-        isValid = false
-      }
-    })
-
-    if (isValid) {
-      console.log("All YouTube links valid - proceeding with save")
-      if (typeof saveTeamData === "function") {
-        saveTeamData()
-      }
-    } else {
-      console.log("YouTube validation failed")
-    }
-}) */
-
-document.querySelector('.form-team-input-image').addEventListener('change', (e) => 
-  {swapImage(e.target.value.trim(), document.getElementById('formTeamImage'))
+document.querySelector('.form-team-input-image').addEventListener('change', (e) => {
+  swapImage(e.target.value.trim(), document.getElementById('formTeamImage'))
 })
 document.querySelectorAll('.player-image').forEach(player => {
   player.addEventListener('change', (e) => {swapImage(e.target.value.trim(), e.target.parentElement.querySelector('img'))})
 })
+
+// get rid of elements
+document.querySelector('form').querySelectorAll('input').forEach(input => {
+  input.addEventListener('input', (e) => {
+    e.target.parentElement.querySelector('span').classList.add('hidden')
+  })
+})
+
+
+/// FUNCTIONS
 
 function swapImage(link, image) {
   image.onerror = () => {image.src = '/images/placeholder.png'}
@@ -68,66 +42,167 @@ function swapImage(link, image) {
 }
 
 function validateForm() {
-  isValid = true
+  console.log(' ')
+  console.log('~~~~~~~~~~~~~~~~~~~~~~')
+  let isValid = true
 
   // Name checks
-  isValid = validateName(document.querySelector('.form-team-input-name').value)
+  if (!validateName(document.querySelector('.form-team-input-name'))) {
+    isValid = false
+  }
+  console.log(isValid);
   document.querySelectorAll('.player-name').forEach(player => {
-    isValid = validateName(player.value)
+    if (!validateName(player)) {
+      isValid = false
+    }
   })
+  console.log(isValid);
 
   // Description check
+  if (!document.querySelector('.form-team-input-description').value.length) {
+    isValid = false
+    document.querySelector('.form-team-input-description').parentElement.querySelector('span').classList.remove('hidden')
+    console.log('Description did not pass')
+  } else {
+    console.log('Description passed')
+  }
+  console.log(isValid);
 
   // Image checks
+  if (!validateImage(document.querySelector('.form-team-input-image'))) {
+    isValid = false
+  }
+  console.log(isValid);
+  document.querySelectorAll('.player-image').forEach(link => {
+    if (!validateImage(link)) {
+      isValid = false
+    }
+  })
+  console.log(isValid);
 
   // Number checks
   document.querySelectorAll('.player-height').forEach(height => {
-    isValid = validateNumberInput(height.value)
+    if (!validateNumberInput(height)) {
+      isValid = false
+    }
   })
+  console.log(isValid);
   document.querySelectorAll('.player-ppg').forEach(ppg => {
-    isValid = validateNumberInput(ppg.value)
+    if (!validateNumberInput(ppg)) {
+      isValid = false
+    }  
   })
+  console.log(isValid);
   document.querySelectorAll('.player-ft').forEach(ft => {
-    isValid = validateNumberInput(ft.value)
+    if (!validateNumberInput(ft)) {
+      isValid = false
+    }  
   })
+  console.log(isValid);
 
   // Embed checks
+  if (!validateYouTubeEmbeds()) {
+    isValid = false
+  }
+  console.log(isValid);
 
-  console.log('Form is:' + isValid + '!')
+  // Finish
+  console.log('Form is: ' + isValid + '!')
   if (isValid) {
-    //                                       Add everything to localStorage ----- unfinished
     document.querySelector('.team-form-section').classList.add('hidden')
     document.getElementById('addTeam').classList.remove('hidden')
   }
+
+  console.log('~~~~~~~~~~~~~~~~~~~~~~')
+  return isValid
 }
 
-function validateName(valueUntrimmed) {
-  const value = valueUntrimmed.trim()
+function validateName(value) {
+  const valueTrimmed = value.value.trim()
 
-  if (value && regExName.test(value)) {
-    console.log('Name "' + value + '" passed')
+  if (valueTrimmed && regExName.test(valueTrimmed)) {
+    console.log('Name passed')
     return true
   } else {
     console.log('Name did not pass');
+    value.parentElement.querySelector('span').classList.remove('hidden')
     return false
+  }
+}
+
+function validateImage(value) {
+  if (!value.value || !regExImageUrl.test(value.value)) {
+    value.parentElement.querySelector('span').classList.remove('hidden')
+    return false
+  } else {
+    return true
   }
 }
 
 function validateNumberInput(value) {
-  if (value.length !== 0) {
-    console.log('Number value: ' + value + ' passed')
+  console.log(value.max);
+  if (value.value.length !== 0 && value.value <= Number(value.max) && value.value >= Number(value.min)) {
+    value.parentElement.querySelector('span').classList.add('hidden')
+    console.log('Number value passed')
     return true
   } else {
     console.log('Number value did not pass')
+    value.parentElement.querySelector('span').classList.remove('hidden')
     return false
   }
 }
 
-function validateEmbedLink(link) {
-  if (!link.trim()) {
+function validateYouTubeEmbeds() {
+  let allValid = true
+  document.querySelectorAll(".form-hightlight-input").forEach((input) => {
+    const errorElement = input.parentElement.querySelector('span')
+    const link = input.value.trim()
+
+    if (!link || link.length === 0 || !regExYoutubeEmbed.test(link.trim())) {
+      errorElement.classList.remove('hidden')
+      errorElement.innerHTML = "YouTube embed link is required"
+      console.log('Embed did not pass!')
+      allValid = false
+    } else {
+      console.log('Embed passed!')
+    }
+
+  })
+  if (allValid) {
+    return true
+  } else {
     return false
-  } 
-  return regExYoutubeEmbed.test(link.trim())
+  }
 }
 
+function saveTeamData() {
+  const players = []
 
+  document.querySelectorAll('.player').forEach(player => {
+    players.push(
+      {
+      player_image: player.querySelector('.player-image').value,
+      player_name: player.querySelector('.player-name').value,
+      height: player.querySelector('.player-height').value,
+      best_ppg: player.querySelector('.player-ppg').value,
+      freethrow_percentage: `${player.querySelector('.player-ft').value}%`,    
+      }
+    )
+  })
+
+  const newTeam = {
+    ID: teams.teams.length + 1,
+    team_image: document.querySelector('.form-team-input-image').value,
+    team_name: document.querySelector('.form-team-input-name').value,
+    description: document.querySelector('.form-team-input-description').value,
+    added_to_ball_of_fame: new Date().toISOString(),
+    highlight_1: document.querySelectorAll('.form-hightlight-input')[0].value,
+    highlight_2: document.querySelectorAll('.form-hightlight-input')[1].value,
+    highlight_3: document.querySelectorAll('.form-hightlight-input')[2].value,
+    players: players,
+  }
+
+  teams.teams.push(newTeam)
+  localStorage.setItem('teams', JSON.stringify(teams))
+  location.reload()
+}

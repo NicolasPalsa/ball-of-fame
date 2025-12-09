@@ -353,9 +353,15 @@ function loadTeamPages() {
     const teamPageTopRight = document.createElement("div")
     teamPageTopRight.classList.add("team-page-top-right")
 
+    const topRightTitle = document.createElement("h2")
+    topRightTitle.classList.add("team-page-title")
+    topRightTitle.innerHTML = team.team_name
+
     const topRightParagraph = document.createElement("p")
     topRightParagraph.classList.add("team-page-description")
     topRightParagraph.innerHTML = team.description
+    
+    teamPageTopRight.append(topRightTitle)
     teamPageTopRight.append(topRightParagraph)
     teamPageTop.append(teamPageTopRight)
     mainWrapDiv.append(teamPageTop)
@@ -403,3 +409,4 @@ function loadTeamPages() {
 
 loadTeams()
 loadTeamPages()
+
