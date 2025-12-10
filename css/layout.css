@@ -1,26 +1,44 @@
 body {
   margin-right: 90px;
   margin-left: 90px;
+  background-image: url(https://www.titanui.com/wp-content/uploads/2013/05/30/Light-Brown-Wooden-Floor-Texture.jpg);
+}
+body.slow-roll {
+  animation: slow-roll 420s linear infinite;
+}
+
+p, h1, h2, h3, label {
+  color: #36220a;
 }
 
 img {
   user-select: none;
+  
 }
 
 #header {
-  cursor: url("cursor_2.png") 2 2, pointer;
+  cursor: pointer;
 }
 
 h1.title {
   text-align: center;
   text-decoration: underline;
+  word-spacing: 40px;
+  letter-spacing: 10px;
+  font-size: 100px;
+}
+h1.title:hover {
+  animation: enlarge 0.2s forwards;
+}
+h1.title:not(:hover) {
+  animation: ensmall 0.2s forwards;
 }
 
 .logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 130px;
+  width: 200px;
 }
 
 .search-bar {
@@ -41,45 +59,14 @@ h1.title {
   font-size: 16px;
 }
 
+.search-result {
+  user-select: none;
+}
+
 .search-icon {
   font-size: 18px;
   margin-right: 10px;
   color: #555;
-}
-
-.team-section {
-  text-align: center;
-  flex-flow: column;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.team-section-box {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  text-align: center;
-}
-.team-section-side img {
-  height: 184px;
-}
-img.team-section-image {
-  border: 1px;
-
-  border-radius: 0;
-}
-.team-section-middle-top {
-  border: 5px solid blue;
-  border-radius: 25px;
-  margin-right: 90px;
-  background-color: rgba(210, 201, 248, 0.5);
-}
-
-.team-section-middle-bottom {
-  border: 5px solid red;
-  border-radius: 25px;
-  margin-left: 90px;
-  background-color: rgba(247, 164, 164, 0.5);
 }
 
 .teamadd {
@@ -95,46 +82,6 @@ img.team-section-image {
   border-radius: 25px;
   cursor: pointer;
 }
-.team-form-section {
-  text-align: center;
-  flex-flow: column;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  border: 10px solid black;
-  border-radius: 25px;
-}
-
-input.form-team-input-name {
-  margin: 10px;
-  padding: 10px;
-  width: 500px;
-  border: 1px solid #555;
-  border-radius: 25px;
-}
-
-.form-team-input-description {
-  margin: 10px;
-  padding: 10px;
-  width: 700px;
-  height: 300px;
-  border: 1px solid #555;
-  border-radius: 25px;
-}
-
-.form-highlight-input {
-  margin: 10px;
-  padding: 10px;
-  width: 700px;
-  height: 150px;
-  border: 1px solid #555;
-  border-radius: 25px;
-}
-
-.form-team-name-label {
-  font-size: 18px;
-  margin-right: 10px;
-}
 
 .hidden {
   display: none;
@@ -148,165 +95,51 @@ input.form-team-input-name {
   font-size: 14px;
   text-align: center;
 }
-.FormTeamIMmage div img {
-  width: 400px;
-  border: 1px;
-  border-radius: 25px;
-  margin-left: auto;
-}
 
-.player-input {
-  border: 1px solid;
-  border-radius: 25px;
-  width: 100%;
-}
-
-.player-input-box .player-input {
-  height: 60px;
-  font-size: 20px;
-}
-
-.team-form div img {
-  width: 300px;
-  border: 1px;
-  border-radius: 25px;
-}
-
-.player div img {
-  width: 150px;
-  border: 1px;
-  border-radius: 25px;
-  display: flex;
-}
-
-.player {
-  border: 1px solid black;
-  border-radius: 40px;
-  width: 80%;
-  margin: auto;
-  height: 199px;
-  display: flex;
-  flex-flow: row nowrap;
-}
-.player-input-box {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-}
-.player-input-row {
-  display: flex;
-  flex-flow: row nowrap;
-  margin-bottom: 10px;
-  align-items: center;
-  justify-content: space-around;
-}
-.player-input-wrap {
-  display: flex;
-  flex-flow: column nowrap;
-  margin-right: 20px;
-  width: 40%;
-}
-.search-result {
-  user-select: none;
-}
-
-.team-page {
-  margin-top: 30px;
-  padding: 20px;
-  border: 2px solid #333;
-  border-radius: 15px;
-  background-color: #f9f9f9;
-}
-
-.team-page-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.team-page-top-left {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-}
-
-.team-page-top-left img {
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
-  margin-bottom: 20px;
-  align-self: center;
-}
-.team-page-link-title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  text-decoration: underline;
-}
-
-.team-page-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.team-page-highlight {
-  padding: 10px 15px;
-  background-color: #333;
-  color: white;
+.fun-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 30px;
+  opacity: 0;
+  background: none;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+  cursor: help;
+}
+.fun-button.appear {
+  animation: appear 3s forwards;
 }
 
-.team-page-top-right {
-  width: 65%;
+.spin {
+  animation: spin 5s linear infinite;
+}
+.spin:hover {
+  animation-duration: 2s;
 }
 
-.team-page-description {
-  font-size: 16px;
-  line-height: 1.6;
-  text-align: justify;
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
-.team-page-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 2px solid #ddd;
+@keyframes slow-roll {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
-.team-page-bottom-player {
-  width: 18%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: white;
+@keyframes enlarge {
+  from { transform: scale(1); }
+  to   { transform: scale(1.05); }
 }
 
-.team-page-bottom-player img {
-  width: 80%;
-  height: 80%;
-  border-radius: 0;
-  margin-bottom: 10px;
-  border: 2px solid #333;
+@keyframes ensmall {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1); }
 }
 
-.team-page-bottom-player p {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-.team-page-bottom-player p:first-of-type {
-  font-weight: bold;
-  font-size: 16px;
-  margin-top: 10px;
+@keyframes appear {
+  from { opacity: 0;}
+  to   { opacity: 1;}
 }

@@ -1,0 +1,99 @@
+.formTeamImage {
+  width: 400px;
+  border: 1px;
+  border-radius: 25px;
+  margin-left: auto;
+}
+
+.player-input {
+  border: 1px solid;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.player-input-box .player-input {
+  height: 60px;
+  font-size: 20px;
+}
+
+.team-form div img {
+  width: 300px;
+  border: 1px;
+  border-radius: 25px;
+}
+
+.player div img {
+  width: 150px;
+  border: 1px;
+  border-radius: 25px;
+  display: flex;
+}
+
+.player {
+  border: 1px solid #4a2f0e;
+  border-radius: 40px;
+  width: 80%;
+  margin: auto;
+  height: 199px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.player-input-box {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+.player-input-row {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+.player-input-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 20px;
+  width: 40%;
+}
+
+.team-form-section {
+  text-align: center;
+  flex-flow: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border: 2px solid #4a2f0e;
+  border-radius: 25px;
+}
+
+input.form-team-input-name {
+  margin: 10px;
+  padding: 10px;
+  width: 500px;
+  border: 1px solid #4a2f0e;
+  border-radius: 25px;
+}
+
+.form-team-input-description {
+  margin: 10px;
+  padding: 10px;
+  width: 700px;
+  height: 300px;
+  border: 1px solid #4a2f0e;
+  border-radius: 25px;
+}
+
+.form-highlight-input {
+  margin: 10px;
+  padding: 10px;
+  width: 700px;
+  height: 150px;
+  border: 1px solid #4a2f0e;
+  border-radius: 25px;
+}
+
+.form-team-name-label {
+  font-size: 18px;
+  margin-right: 10px;
+}

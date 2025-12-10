@@ -51,9 +51,7 @@ function search(searchList, searchTerm) {
     console.log("Nothing searched")
   } else {
     for (i of searchList) {
-      if (
-        i.slice(0, searchTerm.length).toLowerCase() === searchTerm.toLowerCase()
-      ) {
+      if (i.slice(0, searchTerm.length).toLowerCase() === searchTerm.toLowerCase()) {
         results.push(i)
       }
     }
@@ -73,6 +71,7 @@ function navigateToTeamPage(id) {
       teamPage.classList.remove('hidden')
       document.getElementById('everythingWrap').classList.add('hidden')
       document.getElementById('logo').src = '/images/bof.png'
+      document.getElementById('logo').classList.add('spin')
       window.scrollTo({ top: 0, behavior: 'smooth'}) // ChatGPT code snippet
     } else {
       teamPage.classList.add('hidden')

@@ -14,17 +14,22 @@
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-image: url(https://www.titanui.com/wp-content/uploads/2013/05/30/Light-Brown-Wooden-Floor-Texture.jpg);
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid #4a2f0e;
   width: 60%;
   border-radius: 25px;
 }
 
+.modal-content iframe {
+  border-radius: 25px;
+  border: 1px solid #4a2f0e;
+}
+
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #4a2f0e;
   float: right;
   font-size: 28px;
   font-weight: bold;

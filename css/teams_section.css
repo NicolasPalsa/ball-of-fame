@@ -1,0 +1,98 @@
+.team-section {
+  text-align: center;
+  flex-flow: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.team-section-box:hover {
+  animation: enlarge 0.2s forwards;
+}
+.team-section-box:not(:hover) {
+  animation: ensmall 0.2s forwards;
+}
+
+.team-section h2:hover {
+  animation: enlarge 0.1s forwards;
+}
+.team-section h2:not(:hover) {
+  animation: ensmall 0.1s forwards;
+}
+
+.team-section-side {
+  width: 25%;
+}
+.team-section-middle {
+  width: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.team-section-box {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.team-section-side img {
+  height: 184px;
+}
+img.team-section-image {
+  border: 1px;
+
+  border-radius: 0;
+}
+
+.team-section-middle-top {
+  border: 3px solid #1D428A;
+  border-left: 0px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 50px;
+  margin-right: 90px;
+  background-color: rgba(210, 201, 248, 0.5);
+  background: #917eff;
+  background-image: linear-gradient(45deg, #5c57fc, transparent 90%),
+    radial-gradient(#5811ff 68%, transparent 5%);
+  background-size: 4.2em 4.2em;
+  overflow: hidden;
+}
+
+.team-section-middle-bottom {
+  border: 3px solid #C8102E;
+  border-right: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 50px;
+  margin-left: 90px;
+  background-color: rgba(247, 164, 164, 0.5);
+  background: #ff7e86;
+  background-image: linear-gradient(45deg, #fc5762, transparent 90%),
+    radial-gradient(#ff1122 68%, transparent 5%);
+  background-size: 4.2em 4.2em;
+  overflow: hidden;
+}
+
+.team-section-side.team-logo {
+  border: 3px solid #1D428A;
+  border-radius: 15px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 100px;
+  background-image: conic-gradient(from 0deg, #1D428A, rgb(14, 40, 92), #1D428A);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: #1D428A;
+  overflow: hidden;
+}
+.team-section-side.top-player {
+  border: 3px solid #C8102E;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 100px;
+  background-image: conic-gradient(from 0deg, #C8102E, rgb(111, 1, 1), #C8102E);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: #C8102E;
+  overflow: hidden;
+}

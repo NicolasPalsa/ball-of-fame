@@ -241,6 +241,8 @@ if (rawTeams) {
 }
 
 document.getElementById('header').addEventListener('click', () => {location.reload()})
+document.querySelector('.fun-button').addEventListener('mouseenter', (e) => {e.target.classList.add('appear')})
+document.querySelector('.fun-button').addEventListener('click', (e) => {document.body.classList.add('slow-roll'); e.target.classList.add('hidden')})
 
 function loadTeams() {
   const parentDiv = document.getElementById("teamSection")
@@ -410,3 +412,8 @@ function loadTeamPages() {
 loadTeams()
 loadTeamPages()
 
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('dragstart', e => {
+    e.preventDefault()
+  })
+})
