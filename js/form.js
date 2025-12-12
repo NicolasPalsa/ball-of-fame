@@ -30,11 +30,23 @@ document.querySelectorAll('.player-image').forEach(player => {
   player.addEventListener('change', (e) => {swapImage(e.target.value.trim(), e.target.parentElement.querySelector('img'))})
 })
 
-// get rid of elements
+// get rid of error elements
 document.querySelector('form').querySelectorAll('input').forEach(input => {
-  input.addEventListener('input', (e) => {
-    e.target.parentElement.querySelector('span').classList.add('hidden')
-  })
+  if (input.classList.contains('player-height') || input.classList.contains('player-ppg') || input.classList.contains('player-ft')) {
+    input.addEventListener('input', (e) => {
+      e.target.parentElement.parentElement.querySelector('span').classList.add('hidden')
+      e.target.style.borderColor = '#4a2f0e'
+    })  
+  } else {
+    input.addEventListener('input', (e) => {
+      e.target.parentElement.querySelector('span').classList.add('hidden')
+      e.target.style.borderColor = '#4a2f0e'
+    })
+  }
+})
+document.querySelector('.form-team-input-description').addEventListener('input', (e) => {
+  e.target.parentElement.querySelector('span').classList.add('hidden')
+  e.target.style.borderColor = '#4a2f0e'
 })
 
 
@@ -58,35 +70,35 @@ function validateForm() {
   if (!validateName(document.querySelector('.form-team-input-name'))) {
     isValid = false
   }
-  console.log(isValid);
+  
   document.querySelectorAll('.player-name').forEach(player => {
     if (!validateName(player)) {
       isValid = false
     }
   })
-  console.log(isValid);
+  
 
   // Description check
   if (!document.querySelector('.form-team-input-description').value.length) {
     isValid = false
     document.querySelector('.form-team-input-description').parentElement.querySelector('span').classList.remove('hidden')
+    document.querySelector('.form-team-input-description').style.borderColor = 'red'
     console.log('Description did not pass')
   } else {
     console.log('Description passed')
   }
-  console.log(isValid);
 
   // Image checks
   if (!validateImage(document.querySelector('.form-team-input-image'))) {
     isValid = false
   }
-  console.log(isValid);
+  
   document.querySelectorAll('.player-image').forEach(link => {
     if (!validateImage(link)) {
       isValid = false
     }
   })
-  console.log(isValid);
+  
 
   // Number checks
   document.querySelectorAll('.player-height').forEach(height => {
@@ -94,25 +106,25 @@ function validateForm() {
       isValid = false
     }
   })
-  console.log(isValid);
+  
   document.querySelectorAll('.player-ppg').forEach(ppg => {
     if (!validateNumberInput(ppg)) {
       isValid = false
     }  
   })
-  console.log(isValid);
+  
   document.querySelectorAll('.player-ft').forEach(ft => {
     if (!validateNumberInput(ft)) {
       isValid = false
     }  
   })
-  console.log(isValid);
+  
 
   // Embed checks
   if (!validateYouTubeEmbeds()) {
     isValid = false
   }
-  console.log(isValid);
+  
 
   // Finish
   console.log('Form is: ' + isValid + '!')
@@ -134,6 +146,7 @@ function validateName(value) {
   } else {
     console.log('Name did not pass');
     value.parentElement.querySelector('span').classList.remove('hidden')
+    value.style.borderColor = 'red'
     return false
   }
 }
@@ -141,6 +154,7 @@ function validateName(value) {
 function validateImage(value) {
   if (!value.value || !regExImageUrl.test(value.value)) {
     value.parentElement.querySelector('span').classList.remove('hidden')
+    value.style.borderColor = 'red'
     return false
   } else {
     return true
@@ -148,28 +162,29 @@ function validateImage(value) {
 }
 
 function validateNumberInput(value) {
-  console.log(value.max);
+
   if (value.value.length !== 0 && value.value <= Number(value.max) && value.value >= Number(value.min)) {
-    value.parentElement.querySelector('span').classList.add('hidden')
+    value.parentElement.parentElement.querySelector('span').classList.add('hidden')
     console.log('Number value passed')
     return true
   } else {
     console.log('Number value did not pass')
-    value.parentElement.querySelector('span').classList.remove('hidden')
+    value.parentElement.parentElement.querySelector('span').classList.remove('hidden')
+    value.style.borderColor = 'red'
     return false
   }
 }
 
 function validateYouTubeEmbeds() {
   let allValid = true
-  document.querySelectorAll(".form-hightlight-input").forEach((input) => {
+  document.querySelectorAll(".form-highlight-input").forEach((input) => {
     const errorElement = input.parentElement.querySelector('span')
     const link = input.value.trim()
 
     if (!link || link.length === 0 || !regExYoutubeEmbed.test(link.trim())) {
       errorElement.classList.remove('hidden')
-      errorElement.innerHTML = "YouTube embed link is required"
       console.log('Embed did not pass!')
+      input.style.borderColor = 'red'
       allValid = false
     } else {
       console.log('Embed passed!')
