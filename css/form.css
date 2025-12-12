@@ -1,99 +1,138 @@
 .formTeamImage {
-  width: 400px;
+  width: 25rem;
   border: 1px;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
   margin-left: auto;
 }
 
-.player-input {
-  border: 1px solid;
-  border-radius: 25px;
-  width: 100%;
-}
-
-.player-input-box .player-input {
-  height: 60px;
-  font-size: 20px;
-}
-
 .team-form div img {
-  width: 300px;
-  border: 1px;
-  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  margin-bottom: 1.25rem;
+  align-self: center;
+}
+
+.player-divs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-top: 1.875rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid #ddd;
 }
 
 .player div img {
-  width: 150px;
-  border: 1px;
-  border-radius: 25px;
-  display: flex;
+  width: 80%;
+  height: 80%;
+  border-radius: 0;
+  margin: 0;
+  border: 2px solid #4a2f0e;
+  border-radius: 0.625rem;
 }
 
 .player {
-  border: 1px solid #4a2f0e;
-  border-radius: 40px;
-  width: 80%;
-  margin: auto;
-  height: 199px;
+  width: 18%;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.625rem;
+  border: 1px solid #4a2f0e;
+  border-radius: 0.625rem;
+  background-color: white;
 }
+
 .player-input-box {
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
 }
-.player-input-row {
+
+.player-input-wrap {
+  margin: 0.3125rem 0;
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+.player-label-input-wrap {
   display: flex;
   flex-flow: row nowrap;
-  margin-bottom: 10px;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-.player-input-wrap {
-  display: flex;
-  flex-flow: column nowrap;
-  margin-right: 20px;
-  width: 40%;
+
+.team-form input {
+  border: 1px solid;
+  border-radius: 0.625rem;
+  height: 1.25rem;
+}
+
+.player-input-box .player-input {
+  height: 1.875rem;
+  font-size: 0.75rem;
 }
 
 .team-form-section {
-  text-align: center;
-  flex-flow: column;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
+  margin-top: 1.875rem;
+  padding: 1.25rem;
   border: 2px solid #4a2f0e;
-  border-radius: 25px;
+  border-radius: 0.9375rem;
+  background-color: rgba(249, 249, 249, 0.8);
+}
+
+.team-form-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.875rem;
+}
+
+.team-form-top-right {
+  width: 65%;
+}
+
+.team-form-top-left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
 }
 
 input.form-team-input-name {
-  margin: 10px;
-  padding: 10px;
-  width: 500px;
+  margin: 0.625rem;
+  padding: 0.625rem;
+  width: 31.25rem;
   border: 1px solid #4a2f0e;
-  border-radius: 25px;
+  border-radius: 0.625rem;
 }
 
 .form-team-input-description {
-  margin: 10px;
-  padding: 10px;
-  width: 700px;
-  height: 300px;
+  margin: 0.625rem;
+  padding: 0.625rem;
+  width: 43.75rem;
+  height: 18.75rem;
   border: 1px solid #4a2f0e;
-  border-radius: 25px;
+  border-radius: 0.625rem;
 }
 
 .form-highlight-input {
-  margin: 10px;
-  padding: 10px;
-  width: 700px;
-  height: 150px;
+  margin: 0.625rem;
+  padding: 0.25rem;
+  width: 25rem;
   border: 1px solid #4a2f0e;
-  border-radius: 25px;
+  border-radius: 0.625rem;
 }
 
 .form-team-name-label {
-  font-size: 18px;
-  margin-right: 10px;
+  font-size: 1.125rem;
+  margin-right: 0.625rem;
+}
+
+.player-label-input-wrap label {
+  font-size: 1rem;
+  align-self: center;
+}
+
+.player-label-input-wrap input {
+  width: 40%;
 }

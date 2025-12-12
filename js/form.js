@@ -4,8 +4,16 @@ const regExName = /^[A-Za-zÀ-ÖØ-öø-ÿ]+([ '-][A-Za-zÀ-ÖØ-öø-ÿ]+)*$/
 const regExYoutubeEmbed = /^https:\/\/www\.youtube\.com\/embed\/[^?\/]+(.*)?$/
 
 document.getElementById('addTeam').addEventListener('click', (e) => {
+  e.target.classList.add('button-shrink')
+  setTimeout(() => {
+    e.target.classList.add('hidden')  
+
     document.querySelector('.team-form-section').classList.remove('hidden')
-    e.target.classList.add('hidden')
+    document.querySelector('.team-section').classList.add('hidden')
+    document.querySelector('.search-bar').classList.add('hidden')
+    window.scrollTo({ top: 500, behavior: 'smooth'}) // ChatGPT code snippet
+
+  }, 1000)
 })
 
 document.getElementById('submitForm').addEventListener('click', (e) => {
