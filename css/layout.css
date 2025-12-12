@@ -1,7 +1,8 @@
 body {
-  margin-right: 90px;
-  margin-left: 90px;
+  margin-right: 6%;
+  margin-left: 6%;
   background-image: url(https://www.titanui.com/wp-content/uploads/2013/05/30/Light-Brown-Wooden-Floor-Texture.jpg);
+  font-family: 'Fira Sans', sans-serif;
 }
 body.slow-roll {
   animation: slow-roll 420s linear infinite;
@@ -9,6 +10,10 @@ body.slow-roll {
 
 p, h1, h2, h3, label {
   color: #36220a;
+}
+
+input::placeholder, textarea::placeholder, button {
+  font-family: 'Fira Sans', sans-serif;
 }
 
 img {
@@ -21,24 +26,26 @@ img {
 }
 
 h1.title {
+  font-family: 'STIX Two Text', serif;
   text-align: center;
   text-decoration: underline;
-  word-spacing: 40px;
-  letter-spacing: 10px;
-  font-size: 100px;
+  word-spacing: 1.25rem;
+  letter-spacing: 0.625rem;
+  font-size: 6.25rem;
+  scale: 1;
+  transition: transform 0.2s;
+  margin: 0px;
 }
 h1.title:hover {
-  animation: enlarge 0.2s forwards;
-}
-h1.title:not(:hover) {
-  animation: ensmall 0.2s forwards;
+  transform: scale(1.05)
 }
 
 .logo {
   display: block;
+  margin: 2.5rem;
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
+  width: 12.5rem;
 }
 
 .search-bar {
@@ -48,39 +55,37 @@ h1.title:not(:hover) {
   flex-flow: column;
 }
 
-.search-results .search-input {
-  min-width: 100px;
-  max-width: 100px;
-  border: 15px solid green;
-  padding: 50px;
-  margin-right: auto;
-  margin-left: auto;
-  outline: none;
-  font-size: 16px;
-}
-
 .search-result {
   user-select: none;
 }
 
 .search-icon {
-  font-size: 18px;
-  margin-right: 10px;
+  font-size: 1.125rem;
+  margin-right: 0.625rem;
   color: #555;
 }
 
-.teamadd {
+.team-add {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: red;
+  margin-top: 1.875rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  background-color: #C8102E;
   color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
   cursor: pointer;
+  transition: box-shadow 0.2s;
+  transition: scale 0.2s;
+}
+.team-add:hover {
+  box-shadow: 0 0 0.5rem #860b1f;
+  scale: 1.2;
+}
+.team-add.button-shrink {
+  animation: shrink 1s forwards;
 }
 
 .hidden {
@@ -91,21 +96,24 @@ h1.title:not(:hover) {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 15px 0;
-  font-size: 14px;
+  padding: 1rem 0;
+  font-size: 1rem;
   text-align: center;
+}
+.footer p span {
+  text-decoration: underline;
 }
 
 .fun-button {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  font-size: 30px;
+  top: 1.25rem;
+  left: 1.25rem;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.5rem;
   opacity: 0;
   background: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: help;
 }
 .fun-button.appear {
@@ -115,31 +123,49 @@ h1.title:not(:hover) {
 .spin {
   animation: spin 5s linear infinite;
 }
-.spin:hover {
-  animation-duration: 2s;
+
+.spinYRight {
+  animation: spinYRight 10s linear infinite;
 }
 
+.spinYLeft {
+  animation: spinYLeft 10s linear infinite;
+}
+
+
+/* Animations */
+
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from { transform: rotate(0deg);}
+  to   { transform: rotate(360deg);}
+}
+
+@keyframes spinYRight {
+  from { transform: rotateY(0deg);}
+  to   { transform: rotateY(360deg);}
+}
+
+@keyframes spinYLeft {
+  from { transform: rotateY(0deg);}
+  to   { transform: rotateY(-360deg);}
 }
 
 @keyframes slow-roll {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from { transform: rotate(0deg);}
+  to   { transform: rotate(360deg);}
 }
 
 @keyframes enlarge {
-  from { transform: scale(1); }
-  to   { transform: scale(1.05); }
-}
-
-@keyframes ensmall {
-  from { transform: scale(1.05); }
-  to   { transform: scale(1); }
+  from { transform: scale(1);}
+  to   { transform: scale(1.05);}
 }
 
 @keyframes appear {
   from { opacity: 0;}
   to   { opacity: 1;}
+}
+
+@keyframes shrink {
+  from { transform: scale(1);}
+  to   { transform: scale(0);}
 }

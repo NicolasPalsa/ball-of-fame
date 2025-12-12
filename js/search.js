@@ -33,6 +33,7 @@ document.getElementById("search").addEventListener("input", (e) => {
       const value = e.target.value
       for (team of teams.teams) {
         if (team.team_name === value) {
+          console.log(team.ID.toString);
           navigateToTeamPage(team.ID.toString())
         } else {
           for (let player of team.players) {
@@ -70,7 +71,6 @@ function navigateToTeamPage(id) {
     if (teamPage.id === id) {
       teamPage.classList.remove('hidden')
       document.getElementById('everythingWrap').classList.add('hidden')
-      document.getElementById('logo').src = '/images/bof.png'
       document.getElementById('logo').classList.add('spin')
       window.scrollTo({ top: 0, behavior: 'smooth'}) // ChatGPT code snippet
     } else {

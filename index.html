@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ball Of Fame</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/modal.css" />
     <link rel="stylesheet" href="/css/team_pages.css" />
     <link rel="stylesheet" href="/css/teams_section.css" />
     <link rel="stylesheet" href="/css/form.css" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     <script src="/js/data.js" defer></script>
     <script src="/js/modal.js" defer></script>
@@ -39,7 +48,7 @@
           placeholder="Search team or player"
         />
         <div class="search-results" id="result"></div>
-        <!--style so it fits 3 results and is always the same size-->
+        <!--style so it fits 5 results and is always the same size-->
       </div>
 
       <!-- Team and top player, and the template -->
@@ -74,19 +83,28 @@
         <!--TEMPLATE ENDS-->
       </div>
 
-      <button class="teamadd" id="addTeam">Add team</button>
+      <button class="team-add" id="addTeam">Add team</button>
 
       <!-- Form for adding teams -->
       <div class="team-form-section hidden">
         <h2 class="team-form-title">Add team form</h2>
         <form class="team-form" id="teamForm">
-          <div>
-            <img
-              src="images/placeholder.png"
-              alt="Invalid image link"
-              id="formTeamImage"
-            />
-            <div>
+          <div class="team-form-top">
+            <div class="team-form-top-left">
+              <img
+                src="images/placeholder.png"
+                alt="Invalid image link"
+                id="formTeamImage"
+              />
+              <div>
+                <label class="form-team-image-label">Link image of team:</label>
+                <input class="form-team-input-image" type="text" required />
+                <span class="error-message hidden"
+                  >Invalid URL link, has to be an image link</span
+                >
+              </div>
+            </div>
+            <div class="team-form-top-right">
               <div>
                 <label class="form-team-name-label">Name of team: </label>
                 <input class="form-team-input-name" type="text" required />
@@ -101,18 +119,10 @@
                 >
                 <textarea
                   class="form-team-input-description"
-                  type="text"
                   required
                 ></textarea>
                 <span class="error-message hidden"
                   >Description can't be empty</span
-                >
-              </div>
-              <div>
-                <label class="form-team-image-label">Link image of team:</label>
-                <input class="form-team-input-image" type="text" required />
-                <span class="error-message hidden"
-                  >Invalid URL link, has to be an image link</span
                 >
               </div>
             </div>
@@ -121,9 +131,9 @@
           <div class="highlights">
             <div>
               <input
-                class="form-hightlight-input"
+                class="form-highlight-input"
                 type="text"
-                placeholder="Insert YouTube embed link"
+                placeholder='Insert YouTube embed URL "https://www.youtube.com/embed/"'
                 required
               />
               <span class="error-message hidden"
@@ -133,9 +143,9 @@
 
             <div>
               <input
-                class="form-hightlight-input"
+                class="form-highlight-input"
                 type="text"
-                placeholder="Insert YouTube embed link"
+                placeholder='Insert YouTube embed URL "https://www.youtube.com/embed/"'
                 required
               />
               <span class="error-message hidden"
@@ -145,9 +155,9 @@
 
             <div>
               <input
-                class="form-hightlight-input"
+                class="form-highlight-input"
                 type="text"
-                placeholder="Insert YouTube embed link"
+                placeholder='Insert YouTube embed URL "https://www.youtube.com/embed/"'
                 required
               />
               <span class="error-message hidden"
@@ -176,7 +186,7 @@
               <div class="player-input-box">
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label">Name of player</label>
+                    <label class="player-label">Player's name</label>
                     <input
                       class="player-input player-name"
                       placeholder="Name of player"
@@ -189,15 +199,17 @@
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label">Height of player (cm)</label>
-                    <input
-                      class="player-input player-height"
-                      placeholder="player height"
-                      type="number"
-                      min="50"
-                      max="300"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Height (cm)</label>
+                      <input
+                        class="player-input player-height"
+                        placeholder="player height"
+                        type="number"
+                        min="50"
+                        max="300"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 50 - 300</span
                     >
@@ -205,35 +217,35 @@
                 </div>
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Points Per Game of player</label
-                    >
-                    <input
-                      class="player-input player-ppg"
-                      placeholder="points per game"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="60"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Points Per Game</label>
+                      <input
+                        class="player-input player-ppg"
+                        placeholder="points per game"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="60"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 60</span
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Freethrow percentage of player</label
-                    >
-                    <input
-                      class="player-input player-ft"
-                      placeholder=" Freethrow percentage"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="100"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Freethrow %</label>
+                      <input
+                        class="player-input player-ft"
+                        placeholder=" Freethrow percentage"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="100"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 100</span
                     >
@@ -260,7 +272,7 @@
               <div class="player-input-box">
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label">Name of player</label>
+                    <label class="player-label">Player's name</label>
                     <input
                       class="player-input player-name"
                       placeholder="Name of player"
@@ -273,15 +285,17 @@
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label">Height of player (cm)</label>
-                    <input
-                      class="player-input player-height"
-                      placeholder="player height"
-                      type="number"
-                      min="50"
-                      max="300"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Height (cm)</label>
+                      <input
+                        class="player-input player-height"
+                        placeholder="player height"
+                        type="number"
+                        min="50"
+                        max="300"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 50 - 300</span
                     >
@@ -289,35 +303,35 @@
                 </div>
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Points Per Game of player</label
-                    >
-                    <input
-                      class="player-input player-ppg"
-                      placeholder="points per game"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="60"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Points Per Game</label>
+                      <input
+                        class="player-input player-ppg"
+                        placeholder="points per game"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="60"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 60</span
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Freethrow percentage of player</label
-                    >
-                    <input
-                      class="player-input player-ft"
-                      placeholder=" Freethrow percentage"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="100"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Freethrow %</label>
+                      <input
+                        class="player-input player-ft"
+                        placeholder=" Freethrow percentage"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="100"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 100</span
                     >
@@ -344,7 +358,7 @@
               <div class="player-input-box">
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label">Name of player</label>
+                    <label class="player-label">Player's name</label>
                     <input
                       class="player-input player-name"
                       placeholder="Name of player"
@@ -357,15 +371,17 @@
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label">Height of player (cm)</label>
-                    <input
-                      class="player-input player-height"
-                      placeholder="player height"
-                      type="number"
-                      min="50"
-                      max="300"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Height (cm)</label>
+                      <input
+                        class="player-input player-height"
+                        placeholder="player height"
+                        type="number"
+                        min="50"
+                        max="300"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 50 - 300</span
                     >
@@ -373,35 +389,35 @@
                 </div>
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Points Per Game of player</label
-                    >
-                    <input
-                      class="player-input player-ppg"
-                      placeholder="points per game"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="60"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Points Per Game</label>
+                      <input
+                        class="player-input player-ppg"
+                        placeholder="points per game"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="60"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 60</span
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Freethrow percentage of player</label
-                    >
-                    <input
-                      class="player-input player-ft"
-                      placeholder=" Freethrow percentage"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="100"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Freethrow %</label>
+                      <input
+                        class="player-input player-ft"
+                        placeholder=" Freethrow percentage"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="100"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 100</span
                     >
@@ -428,7 +444,7 @@
               <div class="player-input-box">
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label">Name of player</label>
+                    <label class="player-label">Player's name</label>
                     <input
                       class="player-input player-name"
                       placeholder="Name of player"
@@ -441,15 +457,17 @@
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label">Height of player (cm)</label>
-                    <input
-                      class="player-input player-height"
-                      placeholder="player height"
-                      type="number"
-                      min="50"
-                      max="300"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Height (cm)</label>
+                      <input
+                        class="player-input player-height"
+                        placeholder="player height"
+                        type="number"
+                        min="50"
+                        max="300"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 50 - 300</span
                     >
@@ -457,35 +475,35 @@
                 </div>
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Points Per Game of player</label
-                    >
-                    <input
-                      class="player-input player-ppg"
-                      placeholder="points per game"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="60"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Points Per Game</label>
+                      <input
+                        class="player-input player-ppg"
+                        placeholder="points per game"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="60"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 60</span
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Freethrow percentage of player</label
-                    >
-                    <input
-                      class="player-input player-ft"
-                      placeholder=" Freethrow percentage"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="100"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Freethrow %</label>
+                      <input
+                        class="player-input player-ft"
+                        placeholder=" Freethrow percentage"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="100"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 100</span
                     >
@@ -512,7 +530,7 @@
               <div class="player-input-box">
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label">Name of player</label>
+                    <label class="player-label">Player's name</label>
                     <input
                       class="player-input player-name"
                       placeholder="Name of player"
@@ -525,15 +543,17 @@
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label">Height of player (cm)</label>
-                    <input
-                      class="player-input player-height"
-                      placeholder="player height"
-                      type="number"
-                      min="50"
-                      max="300"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Height (cm)</label>
+                      <input
+                        class="player-input player-height"
+                        placeholder="player height"
+                        type="number"
+                        min="50"
+                        max="300"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 50 - 300</span
                     >
@@ -541,35 +561,35 @@
                 </div>
                 <div class="player-input-row">
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Points Per Game of player</label
-                    >
-                    <input
-                      class="player-input player-ppg"
-                      placeholder="points per game"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="60"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Points Per Game</label>
+                      <input
+                        class="player-input player-ppg"
+                        placeholder="points per game"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="60"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 60</span
                     >
                   </div>
                   <div class="player-input-wrap">
-                    <label class="player-label"
-                      >Freethrow percentage of player</label
-                    >
-                    <input
-                      class="player-input player-ft"
-                      placeholder=" Freethrow percentage"
-                      type="number"
-                      step="0.1"
-                      min="0"
-                      max="100"
-                      required
-                    />
+                    <div class="player-label-input-wrap">
+                      <label class="player-label">Freethrow %</label>
+                      <input
+                        class="player-input player-ft"
+                        placeholder=" Freethrow percentage"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="100"
+                        required
+                      />
+                    </div>
                     <span class="error-message hidden"
                       >Number has to be between 0 - 100</span
                     >
@@ -688,7 +708,10 @@
 
     <!--footer-->
     <footer class="footer">
-      <p class="copyright">© Ball Of Fame - Nicolas, Radin, Mujib</p>
+      <p class="copyright">
+        © Ball Of Fame - <span>Nicolas</span>, <span>Radin</span> and
+        <span>Mujib</span>
+      </p>
     </footer>
   </body>
 </html>

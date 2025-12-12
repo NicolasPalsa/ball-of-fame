@@ -5,18 +5,13 @@
   margin-right: auto;
   width: 80%;
 }
-.team-section-box:hover {
-  animation: enlarge 0.2s forwards;
-}
-.team-section-box:not(:hover) {
-  animation: ensmall 0.2s forwards;
-}
 
-.team-section h2:hover {
-  animation: enlarge 0.1s forwards;
+.team-section h2 {
+  scale: 1;
+  transition: transform 0.2s;
 }
-.team-section h2:not(:hover) {
-  animation: ensmall 0.1s forwards;
+.team-section-middle-top:hover h2, .team-section-middle-bottom:hover h2 {
+  transform: scale(1.4)
 }
 
 .team-section-side {
@@ -34,24 +29,30 @@
   flex-flow: row nowrap;
   justify-content: center;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  height: 11.5rem;
+  scale: 1;
+  transition: transform 0.2s;
 }
+.team-section-box:hover {
+  transform: scale(1.05)
+}
+
 .team-section-side img {
-  height: 184px;
+  height: 11.5rem;
 }
 img.team-section-image {
   border: 1px;
-
   border-radius: 0;
 }
 
 .team-section-middle-top {
   border: 3px solid #1D428A;
   border-left: 0px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 50px;
-  margin-right: 90px;
+  border-bottom-right-radius: 0.625rem;
+  border-top-right-radius: 3.125rem;
+  margin-right: 20%;
   background-color: rgba(210, 201, 248, 0.5);
   background: #917eff;
   background-image: linear-gradient(45deg, #5c57fc, transparent 90%),
@@ -63,9 +64,9 @@ img.team-section-image {
 .team-section-middle-bottom {
   border: 3px solid #C8102E;
   border-right: 0px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 50px;
-  margin-left: 90px;
+  border-top-left-radius: 0.625rem;
+  border-bottom-left-radius: 3.125rem;
+  margin-left: 20%;
   background-color: rgba(247, 164, 164, 0.5);
   background: #ff7e86;
   background-image: linear-gradient(45deg, #fc5762, transparent 90%),
@@ -76,9 +77,9 @@ img.team-section-image {
 
 .team-section-side.team-logo {
   border: 3px solid #1D428A;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   border-top-right-radius: 0px;
-  border-bottom-left-radius: 100px;
+  border-bottom-left-radius: 6.25rem;
   background-image: conic-gradient(from 0deg, #1D428A, rgb(14, 40, 92), #1D428A);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -87,9 +88,9 @@ img.team-section-image {
 }
 .team-section-side.top-player {
   border: 3px solid #C8102E;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   border-bottom-left-radius: 0px;
-  border-top-right-radius: 100px;
+  border-top-right-radius: 6.25rem;
   background-image: conic-gradient(from 0deg, #C8102E, rgb(111, 1, 1), #C8102E);
   background-size: 100% 100%;
   background-repeat: no-repeat;

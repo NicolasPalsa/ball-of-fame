@@ -240,9 +240,69 @@ if (rawTeams) {
   localStorage.setItem("teams", JSON.stringify(teams))
 }
 
-document.getElementById('header').addEventListener('click', () => {location.reload()})
+document.querySelector('.title').addEventListener('click', () => {location.reload()})
+
+document.getElementById('logo').addEventListener('click', () => {
+  document.getElementById('everythingWrap').classList.remove('hidden')
+  document.getElementById('logo').classList.remove('spin')
+  document.querySelectorAll('.team-page').forEach(page => {
+    page.classList.add('hidden')
+  })
+  document.querySelectorAll('.team-form input').forEach(input => {
+    input.value = ''
+  })
+  document.querySelector('.team-form-section').querySelectorAll('img').forEach(img => {
+    img.src = '/images/placeholder.png'
+  })
+  document.querySelector('.form-team-input-description').value = ''
+  document.querySelector('.team-form-section').classList.add('hidden')
+  document.querySelector('.team-section').classList.remove('hidden')
+  document.querySelector('.team-add').classList.remove('hidden')
+  document.querySelector('.team-add').classList.remove('button-shrink')
+  document.querySelector('.search-bar').classList.remove('hidden')
+})
+
+document.querySelector('.footer').querySelectorAll('span').forEach(span => {
+  if (span.innerHTML === 'Nicolas') {
+    span.addEventListener('click', () => {
+      document.documentElement.style.opacity = 0
+      setTimeout(() => {
+        document.querySelectorAll('img').forEach(img => {
+          img.src = 'https://i1.sndcdn.com/artworks-5eLFwtvTFAIFWdOz-OYzP5A-t1080x1080.png'
+        }) 
+        document.documentElement.style.opacity = 1
+        const iframe = document.createElement('iframe')
+        iframe.width = "100%"
+        iframe.height = "166"
+        iframe.scrolling = "no"
+        iframe.frameBorder = "no"
+        iframe.allow = "autoplay"
+        iframe.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2194188523&auto_play=true&color=%23ff5500"
+        iframe.style.display = "none"
+        document.body.appendChild(iframe)
+      }, 400)
+    })
+  }
+})
 document.querySelector('.fun-button').addEventListener('mouseenter', (e) => {e.target.classList.add('appear')})
-document.querySelector('.fun-button').addEventListener('click', (e) => {document.body.classList.add('slow-roll'); e.target.classList.add('hidden')})
+document.querySelector('.fun-button').addEventListener('click', (e) => {
+  document.body.classList.add('slow-roll') 
+  e.target.classList.add('hidden') 
+  document.querySelectorAll('img').forEach(el => {
+    el.classList.add('spin')
+  })
+  document.querySelectorAll('h2').forEach(el => {
+    el.classList.add('spinYLeft')
+  })
+  document.querySelectorAll('p').forEach(pel => {
+    pel.classList.add('spinYRight')
+  })
+  document.querySelectorAll('label').forEach(pel => {
+    pel.classList.add('spinYRight')
+  })
+})
+
+
 
 function loadTeams() {
   const parentDiv = document.getElementById("teamSection")
@@ -250,6 +310,7 @@ function loadTeams() {
   for (const team of teams.teams) {
     const teamRowDiv = document.createElement("div")
     teamRowDiv.classList.add("team-section-box")
+    teamRowDiv.value = team.added_to_ball_of_fame
     teamRowDiv.id = team.ID
 
     const teamLogoDiv = document.createElement("div")
@@ -322,7 +383,7 @@ function loadTeamPages() {
 
     const topLeftHeader = document.createElement("h3")
     topLeftHeader.classList.add("team-page-link-title")
-    topLeftHeader.innerHTML = "Highlights"
+    topLeftHeader.innerHTML = "Team highlights"
 
     const topLeftLinks = document.createElement("div")
     topLeftLinks.classList.add("team-page-links")
@@ -386,15 +447,15 @@ function loadTeamPages() {
 
       const bottomPlayerHeight = document.createElement("p")
       bottomPlayerHeight.classList.add("team-page-bottom-player-stats")
-      bottomPlayerHeight.innerHTML = player.height
+      bottomPlayerHeight.innerHTML = 'Height: <span class="team-page-bottom-player-stat-style">' + player.height + ' cm</span>'
 
       const bottomPlayerPPG = document.createElement("p")
       bottomPlayerPPG.classList.add("team-page-bottom-player-stats")
-      bottomPlayerPPG.innerHTML = player.best_ppg
+      bottomPlayerPPG.innerHTML = 'Best Points Per Game: <span class="team-page-bottom-player-stat-style">' + player.best_ppg + ' PPG</span>'
 
       const bottomPlayerFreethrow = document.createElement("p")
       bottomPlayerFreethrow.classList.add("team-page-bottom-player-stats")
-      bottomPlayerFreethrow.innerHTML = player.freethrow_percentage
+      bottomPlayerFreethrow.innerHTML = 'Freethrow percentage: <span class="team-page-bottom-player-stat-style">' + player.freethrow_percentage + '</span>'
 
       teamPageBottomPlayer.append(bottomPlayerImg)
       teamPageBottomPlayer.append(bottomPlayerName)
@@ -409,7 +470,26 @@ function loadTeamPages() {
   }
 }
 
+function sortTeams() {
+  const sortArray = []
+
+  teams.teams.forEach(team => {
+    sortArray.push(team.added_to_ball_of_fame)
+  })
+
+  sortArray.sort().reverse()
+
+  for (time of sortArray) {
+    document.querySelectorAll('.team-section-box').forEach(team => {
+      if (time === team.value) {
+        document.querySelector('.team-section').append(team)
+      }
+    })
+  }
+}
+
 loadTeams()
+sortTeams()
 loadTeamPages()
 
 document.querySelectorAll('img').forEach(img => {
