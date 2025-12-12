@@ -2,23 +2,28 @@ body {
   margin-right: 6%;
   margin-left: 6%;
   background-image: url(https://www.titanui.com/wp-content/uploads/2013/05/30/Light-Brown-Wooden-Floor-Texture.jpg);
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 body.slow-roll {
   animation: slow-roll 420s linear infinite;
 }
 
-p, h1, h2, h3, label {
+p,
+h1,
+h2,
+h3,
+label {
   color: #36220a;
 }
 
-input::placeholder, textarea::placeholder, button {
-  font-family: 'Fira Sans', sans-serif;
+input::placeholder,
+textarea::placeholder,
+button {
+  font-family: "Fira Sans", sans-serif;
 }
 
 img {
   user-select: none;
-  
 }
 
 #header {
@@ -26,7 +31,7 @@ img {
 }
 
 h1.title {
-  font-family: 'STIX Two Text', serif;
+  font-family: "STIX Two Text", serif;
   text-align: center;
   text-decoration: underline;
   word-spacing: 1.25rem;
@@ -37,7 +42,7 @@ h1.title {
   margin: 0px;
 }
 h1.title:hover {
-  transform: scale(1.05)
+  transform: scale(1.05);
 }
 
 .logo {
@@ -47,22 +52,218 @@ h1.title:hover {
   margin-right: auto;
   width: 12.5rem;
 }
-
 .search-bar {
   align-items: center;
   justify-content: center;
   display: flex;
   flex-flow: column;
+  margin: 1rem auto 0.5rem auto;
+  max-width: 450px;
+  width: 85%;
+  position: relative;
+}
+
+#search {
+  width: 100%;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
+  font-family: "Fira Sans", sans-serif;
+  color: #36220a;
+  background-color: rgba(255, 255, 255, 0.98);
+  border: 1.5px solid #a68a64;
+  border-radius: 30px;
+  box-shadow: 0 3px 8px rgba(54, 34, 10, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  transition: all 0.25s ease;
+  outline: none;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+#search:focus {
+  border-color: #c8102e;
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.15),
+    0 0 0 2px rgba(200, 16, 46, 0.08);
+  background-color: white;
+  transform: translateY(-1px);
+}
+
+#search::placeholder {
+  color: #8b7355;
+  opacity: 0.7;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.search-icon {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  color: #c8102e;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+#result {
+  width: 100%;
+  max-width: 430px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(54, 34, 10, 0.15);
+  margin-top: 0.4rem;
+  overflow: hidden;
+  border: 1px solid #e8dfd5;
+  max-height: 300px;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+}
+
+#result:not(:empty) {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .search-result {
   user-select: none;
+  padding: 0.7rem 1rem;
+  margin: 0;
+  color: #36220a;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 1px solid #f5f1eb;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.search-icon {
-  font-size: 1.125rem;
-  margin-right: 0.625rem;
-  color: #555;
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result:hover {
+  background-color: rgba(200, 16, 46, 0.06);
+  padding-left: 1rem;
+}
+
+.search-result:active {
+  background-color: rgba(200, 16, 46, 0.1);
+}
+
+.search-result strong {
+  color: #c8102e;
+  font-weight: 700;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#result::-webkit-scrollbar {
+  width: 6px;
+}
+
+#result::-webkit-scrollbar-track {
+  background: #f5f1eb;
+  border-radius: 0 12px 12px 0;
+}
+
+#result::-webkit-scrollbar-thumb {
+  background: #a68a64;
+  border-radius: 3px;
+}
+
+#result::-webkit-scrollbar-thumb:hover {
+  background: #c8102e;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 90%;
+    margin: 0.8rem auto 0.4rem auto;
+    max-width: 400px;
+  }
+
+  #search {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .search-result {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .search-wrapper::before {
+    left: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .search-wrapper.with-icon #search {
+    padding-left: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    margin: 0.5rem auto 0.3rem auto;
+    max-width: 350px;
+  }
+
+  #search {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+    border-radius: 25px;
+  }
+
+  #result {
+    max-width: 330px;
+    border-radius: 10px;
+  }
+
+  .search-result {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .search-wrapper::before {
+    left: 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .search-wrapper.with-icon #search {
+    padding-left: 2.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .search-bar {
+    max-width: 300px;
+  }
+
+  #search {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  #result {
+    max-width: 280px;
+  }
 }
 
 .team-add {
@@ -72,7 +273,7 @@ h1.title:hover {
   margin-top: 1.875rem;
   padding: 0.625rem 1.25rem;
   font-size: 1rem;
-  background-color: #C8102E;
+  background-color: #c8102e;
   color: white;
   border: none;
   border-radius: 1.5625rem;
@@ -132,40 +333,67 @@ h1.title:hover {
   animation: spinYLeft 10s linear infinite;
 }
 
-
 /* Animations */
 
 @keyframes spin {
-  from { transform: rotate(0deg);}
-  to   { transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spinYRight {
-  from { transform: rotateY(0deg);}
-  to   { transform: rotateY(360deg);}
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 @keyframes spinYLeft {
-  from { transform: rotateY(0deg);}
-  to   { transform: rotateY(-360deg);}
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
 }
 
 @keyframes slow-roll {
-  from { transform: rotate(0deg);}
-  to   { transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes enlarge {
-  from { transform: scale(1);}
-  to   { transform: scale(1.05);}
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes appear {
-  from { opacity: 0;}
-  to   { opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes shrink {
-  from { transform: scale(1);}
-  to   { transform: scale(0);}
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
 }
