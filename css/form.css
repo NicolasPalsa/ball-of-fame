@@ -184,3 +184,74 @@ input.form-team-input-name {
   scale: 1.1;
 }
 
+@media (max-width: 768px) {
+  .team-form-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-width: 1px;
+  }
+
+  .team-form-top {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-form-top-left,
+  .team-form-top-right {
+    width: 100%;
+  }
+
+  .team-form div img {
+    width: 70%;
+    height: 70%;
+    max-width: 300px;
+    margin: 0 auto 1.25rem;
+  }
+
+  .player-divs {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .player-divs .player {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .team-submit {
+    width: 30%;
+  }
+}
+
+@media (max-width: 425px) {
+  .team-page-bottom-player {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.875rem;
+  }
+
+  .player div img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 0.75rem;
+  }
+  
+  input.form-team-input-name {
+    width: 20rem;
+  }
+
+  .form-team-input-description {
+    width: 20rem;
+  }
+
+  .form-highlight-input {
+    width: 20rem;
+  }
+
+  .form-highlight-input::placeholder {
+    font-size: 0.625rem;
+  }
+
+}
