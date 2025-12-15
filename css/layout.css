@@ -153,25 +153,9 @@ h1.title:hover {
   background-color: rgba(200, 16, 46, 0.1);
 }
 
-.search-result strong {
-  color: #c8102e;
-  font-weight: 700;
-}
-
 .search-wrapper {
   position: relative;
   width: 100%;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 #result::-webkit-scrollbar {
@@ -395,5 +379,31 @@ h1.title:hover {
   }
   to {
     transform: scale(0);
+  }
+}
+
+
+/* media screen */
+
+@media screen and (max-width: 425px) {
+
+  h1.title {
+    font-size: 3rem;
+    letter-spacing: normal;
+    word-spacing: normal;
+    margin-top: 2rem;
+  }
+
+  body {
+    margin-right: 3%;
+    margin-left: 3%;
+  }
+
+  .logo {
+    width: 9rem;
+  }
+
+  .footer {
+    font-size: 0.75rem;
   }
 }

@@ -252,7 +252,7 @@ document.getElementById('logo').addEventListener('click', () => {
     input.value = ''
   })
   document.querySelector('.team-form-section').querySelectorAll('img').forEach(img => {
-    img.src = '/images/placeholder.png'
+    img.src = './images/placeholder.png'
   })
   document.querySelector('.form-team-input-description').value = ''
   document.querySelector('.team-form-section').classList.add('hidden')

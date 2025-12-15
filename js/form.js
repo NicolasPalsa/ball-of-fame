@@ -53,9 +53,9 @@ document.querySelector('.form-team-input-description').addEventListener('input',
 /// FUNCTIONS
 
 function swapImage(link, image) {
-  image.onerror = () => {image.src = '/images/placeholder.png'}
+  image.onerror = () => {image.src = './images/placeholder.png'}
   if (!link || !regExImageUrl.test(link)) {
-    image.src = '/images/placeholder.png'
+    image.src = './images/placeholder.png'
     return
   }
   image.src = link
@@ -219,9 +219,9 @@ function saveTeamData() {
     team_name: document.querySelector('.form-team-input-name').value,
     description: document.querySelector('.form-team-input-description').value,
     added_to_ball_of_fame: new Date().toISOString(),
-    highlight_1: document.querySelectorAll('.form-hightlight-input')[0].value,
-    highlight_2: document.querySelectorAll('.form-hightlight-input')[1].value,
-    highlight_3: document.querySelectorAll('.form-hightlight-input')[2].value,
+    highlight_1: document.querySelectorAll('.form-highlight-input')[0].value,
+    highlight_2: document.querySelectorAll('.form-highlight-input')[1].value,
+    highlight_3: document.querySelectorAll('.form-highlight-input')[2].value,
     players: players,
   }
 
